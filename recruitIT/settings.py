@@ -20,7 +20,7 @@ SECRET_KEY = 'django-insecure-fk_bp*7x@d%97mgz+46%c#4@_gq0osh9-z*=j@j%3qg8(358er
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "localhost"]
 
 
 
@@ -108,19 +108,19 @@ WSGI_APPLICATION = 'recruitIT.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'railway',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'ggFG4Gd-af2AcAgA2Gec66Fa46*5C5Ec',
-    #     'HOST': 'monorail.proxy.rlwy.net',
-    #     'PORT': '19532',       
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv("DATABSE_NAME"),
+        'USER': os.getenv("DATABSE_USER"),
+        'PASSWORD': os.getenv("DATABSE_PASSWORD"),
+        'HOST': os.getenv("DATABSE_HOST"),
+        'PORT': os.getenv("DATABSE_PORT"),       
+    }
 }
 
 
@@ -162,7 +162,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
