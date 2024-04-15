@@ -1,0 +1,109 @@
+{% extends "authenticate/base.html" %}
+
+{% load static %}
+
+{% block title %}Profile Setup{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile-setup.css' %}">
+  <div class="container">
+    <div class="form-container">
+        {% if page == "profile-setup" %}
+        <h2>Lets setup your profile</h2>
+        {%else%}
+        <h2>Edit profile</h2>
+        {% endif %}
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="picture-input">
+                {% if request.user.is_student %}
+                <img src="{{request.user.student.avatar.url}}" alt="" class="picture">
+                {% else %}
+                <img src="{{request.user.company.avatar.url}}" alt="" class="picture">
+                {% endif %}
+                <input type="file" name="image" id="picture-input" style="display: none;">
+                <label for="picture-input" class="change-picture-button">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <span>Upload profile picture</span>
+                </label>
+            </div>
+            <div class="forms">
+               {% if request.user.is_student == True %}
+               <div class="profile-info">
+                    <div class="input-container">
+                        <input type="text" name="first_name" placeholder="First Name" value="{{profile.first_name}}">
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="last_name" placeholder="Last Name" value="{{profile.last_name}}">
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="email" placeholder="" value="{{request.user}}" readonly>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="matric_no" placeholder="Matric Number" class="phone-input" value="{{profile.matric_no}}">
+                    </div>
+
+                    <div class="input-container" style="display: none;">
+                        <p>Add your skills</p>
+                        <div class="skill-input-field">
+                            <input type="text" placeholder="Type skill and hit enter to add" class="skill-input">
+                        </div> 
+                    </div>
+                </div>
+               {% endif %}
+               {% if request.user.is_company == True %}
+               <div class="profile-info">
+                    <div class="input-container">
+                        <input type="text" name="company_name" placeholder="Company Name" value="{{profile.company_name}}">
+                    </div>
+
+                    
+                    <!-- <input type="text" name="bio" placeholder="Last Name"> -->
+                    <textarea name="bio" id="" placeholder="Company bio goes here" cols="30" rows="10" value="{{profile.bio}}"></textarea>
+                    
+
+                    <div class="input-container">
+                        <input type="text" name="email" placeholder="" value="{{request.user}}" readonly>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="phone_number" placeholder="Phone Number" class="phone-input" value="{{profile.phone_number}}">
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="address" placeholder="Address" value="{{profile.address}}">
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="city" placeholder="City" value="{{profile.city}}">
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" name="state" placeholder="State" value="{{profile.state}}">
+                    </div>
+
+                    <div class="input-container" style="display: none;">
+                        <p>Add your skills</p>
+                        <div class="skill-input-field">
+                            <input type="text" placeholder="Type skill and hit enter to add" class="skill-input">
+                        </div>
+                    </div>
+                </div>
+               {% endif %}
+               
+                
+                {% if page == "profile-setup" %}
+                <button class="continue">Continue</button>
+                {%else%}
+                <button class="continue">Update Profile</button>
+                {% endif %}
+            </div>
+            
+        </form>
+    </div>
+  </div>
+  <script src="{% static 'js/profile-setup.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<div class="main">
+
+    <div class="profile-section">
+        <div class="user-profile">
+            <div class="gradient"></div>
+            {% if user.is_student %}
+            <img src="{{user.student.avatar.url}}" alt="">
+            <h3>{{user.student.first_name}} {{user.student.last_name}}</h3>
+            <div>
+                <i class="fa-regular fa-envelope"></i>
+                <p class="profile-email">{{user}}</p>
+            </div>
+
+            <div>
+                 <i class="fa-solid fa-graduation-cap"></i>
+                <p class="profile-email">{{user.student.matric_no}}</p>
+            </div>
+            {% endif %}
+
+            {% if user.is_company %}
+            <img src="{{user.company.avatar.url}}" alt="">
+            <h3 class="profile-name">{{user.company.company_name}}</h3>
+            <p class="profile-bio">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur possimus saep</p>
+            <div>
+                <i class="fa-regular fa-envelope"></i>
+                <p class="profile-email">{{user}}</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="profile-location">{{user.company.address}}, {{user.company.city}}, {{user.company.state}}</p>
+            </div>
+            {% endif %}
+            <a href="{% url 'edit-profile' %}" class="edit-profile">
+                <i class="fa-solid fa-pencil-alt"></i>
+                <p>Edit Profile</p>
+            </a>
+        </div>
+        
+        <div class="recuitments-section">
+            {% include "recruitment/partials/recruitments.html" %}
+        </div>
+    </div>
+
+    {% include "recruitment/partials/right-section.html" %}
+</div>
+{% endblock content %}

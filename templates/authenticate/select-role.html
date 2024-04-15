@@ -1,0 +1,27 @@
+{% extends "authenticate/base.html" %}
+{% load static %}
+{% block title %} Login{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/select-role.css' %}">
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="role-container">
+        <p>I am signing up as a</p>
+        <div class="roles">
+            <input type="radio" name="role" id="student-role" value="student" style="display: none;" checked>
+            <label for="student-role" class="role">
+                <i class="fas fa-user"></i>
+                <span>Student</span>
+            </label>
+    
+            <input type="radio" name="role" id="company-role" value="company" style="display: none;">
+            <label for="company-role" class="role">
+                <i class="fa-solid fa-building"></i>
+                <span>Company</span>
+            </label>
+        </div>
+        <button>Continue</button>
+    </div>
+</form>
+{% endblock content %}

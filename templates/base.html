@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} | Recruit.IT</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="images/png" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+    
+    {% include "partials/_messages.html" %}
+    {% include "partials/_navbar.html" %}
+    {% include "recruitment/add-recruitment.html" %}
+    {% include "recruitment/apply.html" %}
+    {% include "recruitment/approve-application.html" %}
+    <div class="space"></div>
+    {% block content %}
+      
+    {% endblock content %}
+    <script src="{% static 'js/base.js' %}"></script>
+    
+</body>
+</html>

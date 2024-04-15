@@ -1,0 +1,50 @@
+.messages{
+    /* padding: 0px 30px; */
+    transition: .2s ease-out;
+    height: 40px;
+    overflow: hidden;
+}
+
+.p-setup-bg{
+    background: var(--light-gray);
+}
+
+.message{
+    /* margin-top: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.message p{
+    font-size: 18px;
+    
+}
+
+.message i{
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+.message-success{
+    background: #9affa25d;
+    color: #0d5b14;
+}
+
+.message-success i{
+    color: #009325;
+}
+
+.message-error{
+    background: #ffb29ab1;
+    color: #5b210d;
+}
+
+.message-info{
+    background: #cbae065d;
+    color: #5b550d;
+}

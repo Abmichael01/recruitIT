@@ -1,0 +1,68 @@
+.left-section{
+    width: 250px;
+    background: #fff;
+    border: 0.001rem solid #dbdbdb;
+    border-radius: 8px;
+    padding: 20px;
+    position: sticky;
+    top: 75px;
+}
+
+.gradient{
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-image: linear-gradient(to right top, #4cf277, #00decd, #00bfff, #008fff, #a020f0); */
+    background-image: linear-gradient(to right top, #a020f0, #9024f4, #7e29f8, #682dfb, #4b31ff);
+    /* z-index: -1; */
+    border-radius: 5px 5px 0px 0px;
+}
+
+.left-section .left-user-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.left-section .left-user-info img{
+    border-radius: 20px;
+    width: 120px;
+    border: 2px solid var(--primary);
+    object-fit: cover;
+    object-position: center;
+}
+
+.left-section .left-user-info h5{
+    text-align: center;
+    align-self: center;
+    font-weight: 500;
+}
+
+/* .left-section .left-user-info p:nth-child(1){
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+.left-section .left-user-info p:nth-child(2){
+    font-size: 16px;
+    text-align: center;
+    
+}
+
+.left-section .left-user-info p:nth-child(3){
+    font-size: 16px;
+    letter-spacing: 1px;
+} */
+
+@media screen and (max-width: 876px) {
+    .left-section{
+        display: none;
+    }
+}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&family=Poppins&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --primary: #A020F0;
+    --primary-hover: #821ac3;
+    --primary-light: #f7ebff;
+    --light-gray: #f2f2f2;
+    --bw: 0.001rem;
+    --bc: #dbdbdb;
+    --error: #ff3d16;
+    
+}
+
+
+body{
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    background: var(--light-gray);
+    
+}
+
+a{
+    cursor: pointer;
+}
+
+.space{
+    height: 55px;
+}
+
+@media screen and (max-width: 876px){
+    body{
+        padding: 0px 0px;
+        padding-bottom: 50px;
+    }
+}

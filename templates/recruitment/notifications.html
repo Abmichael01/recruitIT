@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Notifications{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+<div class="main">
+    {% include "recruitment/partials/left-section.html" %}
+
+    <div class="middle-section">
+        <div class="notifications-filter">
+            <p>All Notifications</p>
+        </div>
+
+        <div class="notifications">
+            {% if notifications.count != 0 %}
+              {% for notification in notifications %}
+                <div class="notification">
+                    {% if notification.link != None%}
+                    <a href="{{notification.link}}">
+                        <p>{{notification.title}}</p>
+                        <p> {{notification.description}} </p>
+                    </a>
+                    {% else %}
+                    <a>
+                        <p>{{notification.title}}</p>
+                        <p> {{notification.description}} </p>
+                    </a>
+                    {% endif %}
+                    <div class="delete-notification">
+                        <a href="{{notification.link}}">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+              {% endfor %}
+            {% else %}
+            <div class="no-notifications">
+                <i class="fa-solid fa-bell"></i>
+                <p>No notifications</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% include "recruitment/partials/right-section.html" %}
+</div>
+{% endblock content %}

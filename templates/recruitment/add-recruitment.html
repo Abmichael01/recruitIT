@@ -1,0 +1,52 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/add-recruitment.css' %}">
+<div class="add-recruitment-cont">
+    
+    <form class="add-recruitment">
+        {% csrf_token %}
+        <p class="info">This is the info</p>
+        <div class="cancel-cont">
+            <i class="fa-solid fa-xmark cancel-butt"></i>
+        </div>
+        <div class="input-container">
+            <label for="">Title</label>
+            <input type="text" name="title" class="title">
+        </div>
+
+        <div class="input-container">
+            <label for="">Description</label>
+            <textarea name="description" id="" cols="30" rows="10" class="description"></textarea>
+        </div>
+
+        <div class="input-container">
+            <div class="image-input-cont">
+                <img src="" alt="" style="display: none;">
+                <p>Upload an image that showcases your company</p>
+                <label for="add-image-input" class="upload-img-label">Upload Image</label>
+                <input type="file" name="image" accept="image/*" id="add-image-input" style="display: none;" class="image">
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="">Number of Seats</label>
+            <input type="number" name="seats" class="seats">
+        </div>
+        
+
+        <button class="add">
+            <div class="not_pro">
+                <i class="fa-solid fa-plus"></i>
+                <span>Post Recruitment</span>
+            </div>
+            
+            <div class="pro" style="display: none;">
+                <i class="fa-solid fa-spinner processing"></i>
+                <span>Processing</span>
+            </div>
+            
+        </button>
+
+    </form>
+</div>
+
+<script type="text/javascript" src="{% static 'js/add-recruitment.js' %}"></script>

@@ -1,0 +1,118 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/recruitments.css' %}">
+<div class="recruitments">
+    {% for recruitment in recruitments  %}
+    <div class="recruitment">
+        <div class="options-container">
+            <i class="fa-solid fa-ellipsis options-menu"></i>
+            <div class="options options-active">
+                <a href="{% url 'recruitment' recruitment.id %}">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>View Recruitment</span>
+                </a>
+                <a data-url="{% url 'recruitment' recruitment.id %}" class="copy-recruitment-link-butt">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Copy Link</span>
+                </a>
+                {% if request.user == recruitment.user %}
+                <a href="" class="Edit">
+                    <i class="fa-solid fa-pencil"></i>
+                    <span>Edit</span>
+                </a>
+                <a href="" class="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>Delete</span>
+                </a>
+                {% endif %}
+                
+            </div>
+        </div>
+        
+            <div class="company-infos">
+                <a href="{% url 'profile' recruitment.user.id %}">
+                    <div class="company-img">
+                        <img src="{{recruitment.user.company.avatar.url}}" alt="">
+                    </div>
+                </a>
+                    
+                <div class="company-info">
+                    <a href="{% url 'profile' recruitment.user.id %}">
+                        <p>{{recruitment.user.company.company_name}}</p>
+                    </a>
+                    <span>{{recruitment.user.company.bio}}</span>
+                    <div>
+                        
+                        <span>
+                            {% with time_diff=recruitment.created|timesince:current_time %}
+                                {% if "year" in time_diff %}
+                                    {{ time_diff|slice:":1" }}y
+                                {% elif "month" in time_diff %}
+                                    {{ time_diff|slice:":1" }}mo
+                                {% elif "week" in time_diff %}
+                                    {{ time_diff|slice:":1" }}wk
+                                {% elif "day" in time_diff %}
+                                    {{ time_diff|slice:":1" }}d
+                                {% elif "hour" in time_diff %}
+                                    {{ time_diff|slice:":1" }}hr
+                                {% else %}
+                                    {{ time_diff|slice:":1" }}min
+                                {% endif %}
+                            {% endwith %}
+                        </span>
+                        <span>.</span>
+                        <i class="fa-solid fa-earth-africa"></i>
+                    </div>
+                </div>
+                
+            </div>
+        
+        <div class="recruitment-infos">
+            <div class="recruitment-info">
+                <p class="title"><Strong>{{recruitment.title}}</Strong></p>
+                <p class="description">{{recruitment.description}}</p>
+                <a class="see-more">See more...</a>
+                
+            </div>
+            <div class="recruitment-image">
+                <img src="{{recruitment.image.url}}" alt="">
+            </div>
+            <div class="seats-left {% if request.user.is_student == True %} seats-border {% endif %} ">
+                <p>Seats</p>
+                <p>12/{{recruitment.seats}}</p>
+            </div>
+        </div>
+        {% if request.user.is_student == True %}
+        <div class="recruitment-actions">
+            
+            {% if recruitment.id in application_r_ids %}
+                <a class="application-butt" data-id="{{recruitment.id}}">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Re-apply</span>
+                </a>
+            {% else %}
+                <a class="application-butt" data-id="{{recruitment.id}}">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Apply now</span>
+                </a>
+            {% endif %}
+            
+            
+            {% if recruitment.id in saved_recruitment_ids %}
+            <a class="save-recruitment-butt" data-id="{{recruitment.id}}">
+                <i class="fa-regular fa-bookmark recruitment-saved"></i>
+                <span>Saved</span>
+            </a>
+            {% else %}
+            <a class="save-recruitment-butt" data-id="{{recruitment.id}}">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Save</span>
+            </a>
+            {% endif %}
+            
+
+            
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

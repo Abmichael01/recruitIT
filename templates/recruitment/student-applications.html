@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our Recruitments{% endblock title %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/student-applications.css' %}">
+  <div class="main">
+    <div class="main-container">
+        <h2 class="header-text">Applications</h2>
+        <div class="applications-container">
+            <div class="applications-nav">
+                <div class="applications-status">
+                   
+                    <p class="active">All Applications</p>
+                </div>
+                
+            </div>
+
+            <div class="applications">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Recruitment</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {% for application in s_applications %}
+                        <tr>
+                            <td>
+                                <img src="{{application.recruitment.image.url}}" alt="">
+                                <span>{{application.recruitment.title}}</span>
+                            </td>
+                            <td>{{application.created.date}}</td>
+                            {% if application.approved %}
+                            <td class="approved">Approved</td>
+                            {% else %}
+                            <td class="approved">Pending</td>
+                            {% endif %}
+                            <td>
+                                <a class="cancel-application-butt" data-id="{{application.id}}">
+                                    <span>Cancel Application</span>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="{% static 'js/company-recruitment.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email | Recruit.IT</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        padding: 0px 20%;
+        font-family: "Poppins";
+        color: #333;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        background: #fff;
+    }
+
+    header h2{
+        color: #A020F0;
+        font-size: 25px;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #f2f2f2;
+        padding: 40px;
+    }
+    main p{
+        font-size: 18px;
+    }
+
+    .copy-btn{
+        color: #fff;
+        background: #A020F0;
+        padding: 8px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+    }
+</style>
+<body>
+    <header>
+        <h2>Recruit</h2>
+        <img src="{% static 'images/logo.png' %}" alt="">
+    </header>
+    <main>
+        <p>Hello {{email}}</p>
+        <p>Thanks for joining us today</p>
+        <p>Your verification code is {{code}}</p>
+        <button class="copy-btn">Copy Code</button>
+    </main>
+</body>
+</html>

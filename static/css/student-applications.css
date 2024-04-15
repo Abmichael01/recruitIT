@@ -1,0 +1,182 @@
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 30px 9%;
+}
+
+.main-container{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-container .header-text{
+    font-family: "Quicksand",Arial,sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+
+.main-container .applications-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    
+}
+
+.main-container .applications-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1.2px inset var(--bc);
+    padding: 20px 0px;
+    position: relative;
+}
+
+.main-container .applications-nav .pointer{
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: -2px;
+    left: 15px;
+    background: var(--bc);
+}
+
+
+
+.main-container .applications-nav .applications-status{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-container .applications-nav .applications-status p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+}
+
+.main-container .applications-nav .back-butt{
+    font-family: "Roboto",Arial,sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid var(--bc);
+    color: #666;
+    
+}
+
+.main-container .applications{
+    overflow-x: scroll;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.main-container .applications table{
+    min-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--bc);
+    background: #fff;
+    color: #666;
+    
+}
+
+.main-container .applications table th, td{
+    font-family: "Roboto",Arial,sans-serif;
+    padding: 20px 20px;
+    text-align: left;
+    font-size: 16px;
+    text-wrap: nowrap;
+    
+}
+
+.main-container .applications table tr{
+    border-bottom: 1px solid var(--bc);
+}
+
+.main-container .applications table th{
+    font-family: "Roboto",Arial,sans-serif;
+    font-weight: 450;
+    font-size: 18px;
+    border: none;
+}
+
+.main-container .applications table td a{
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #d23f3f;
+    color: #d23f3f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.main-container .applications table td img{
+    width: 50px;
+    height: 30px;
+    border-radius: 2px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-container .applications table tbody tr td:nth-child(1){
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    max-width: 80%;
+}
+
+.main-container .applications table tbody tr td:nth-child(1) span{
+    line-height: 1.3;
+}
+
+.main-container .applications .approved{
+    color: #0ec739;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .main{
+        padding: 30px 20px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .main{
+        padding: 30px 10px;
+    }
+
+    .main-container .header-text{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .main-container .applications-nav{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}

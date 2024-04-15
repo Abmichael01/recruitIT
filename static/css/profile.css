@@ -1,0 +1,106 @@
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 10px;
+}
+
+
+
+
+
+
+.profile-section{
+    width: 870px;
+    position: relative;
+}
+
+.gradient{
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-image: linear-gradient(to right top, #4cf277, #00decd, #00bfff, #008fff, #a020f0); */
+    background-image: linear-gradient(to right top, #a020f0, #9024f4, #7e29f8, #682dfb, #4b31ff);
+    z-index: -1;
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+.profile-section .user-profile{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    border: 0.001rem solid #dbdbdb;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.profile-section .user-profile img{
+    margin-top: 50px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--primary);
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-section .user-profile .profile-name{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.profile-section .user-profile .profile-bio{
+    /* font-weight: 500; */
+    font-size: 18px;
+}
+
+.profile-section .user-profile div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.profile-section .user-profile div i{
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.profile-section .user-profile .edit-profile{
+    font-size: 18px;
+    color: var(--primary);
+    margin-top: 20px;
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recuitments-section{
+    width: 600px;
+}
+
+@media screen and (max-width: 890px) {
+    .profile-section{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 620px) {
+
+    .recuitments-section{
+        width: 100%;
+    }
+}

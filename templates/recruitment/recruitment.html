@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="main">
+    {% include "recruitment/partials/left-section.html" %}
+
+   <div class="middle-section">
+        
+    {% include "recruitment/partials/recruitments.html" %}
+
+   </div>
+   {% include "recruitment/partials/right-section.html" %}
+</div>
+<script type="module" src="{% static 'js/home.js' %}"></script>
+{% endblock content %}

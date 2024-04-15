@@ -1,0 +1,188 @@
+.add-recruitment-cont{
+    position: fixed;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    display: none;
+
+}
+
+
+.add-recruitment{
+    position: relative;
+    width: 700px;
+    height: 75%;
+    background: #fff;
+    border-radius: 10px;
+    border: var(--bw) solid var(--bc);
+    overflow-y: scroll;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+
+.add-recruitment .info{
+    background: #ff7c364f;
+    color: #51250b;
+    font-size: 16px;
+    padding: 20px;
+    margin: 30px 0px;
+    display: none;
+
+}
+
+.add-recruitment .input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-recruitment .input-container input{
+    border: 0.001rem solid var(--bc);
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 18px;
+    outline-color: var(--primary);
+
+    
+}
+
+.add-recruitment .input-container textarea{
+    border: 0.001rem solid var(--bc);
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 18px;
+    height: 200px;
+    outline-color: var(--primary);
+    outline-width: 0.001rem;
+}
+
+.add-recruitment .input-container .image-input-cont{
+    border: 1px dashed var(--bc);
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 18px;
+    height: 350px;
+    outline-color: var(--primary);
+    outline-width: 0.001rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.add-recruitment .input-container:nth-child(3) .image-input-cont label{
+    border: 1px dashed var(--primary);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.upload-img-label{
+    border: 1px dashed var(--primary);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.add-recruitment .input-container:nth-child(3) .image-input-cont p{
+    color: #444;
+    font-size: 18px;
+}
+
+.add-recruitment .input-container:nth-child(3):hover .upload-img-label{
+    z-index: 2;
+}
+
+.add-recruitment button{
+    padding: 10px 20px;
+    font-size: 18px;
+    color: var(--primary);
+    background: none;
+    border: 1px solid var(--primary);
+    width: 100%;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background .5s;
+    position: relative;
+}
+
+.add-recruitment button:hover{
+    background: var(--bc);
+    border-width: 2px;
+}
+
+.add-recruitment button .pro i{
+    animation: loading-animation 1.5s linear infinite;
+}
+
+@keyframes loading-animation {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.add-recruitment .image-input-cont img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 5px;
+
+}
+
+.add-recruitment .requirements-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.add-recruitment .requirements{
+    display: flex;
+    gap: 30px;
+}
+
+.add-recruitment .cancel-cont{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.add-recruitment .cancel-butt{
+    padding: 8px 10px;
+    /* font-size: 30px; */
+    /* font-weight: 500; */
+    border-radius: 50%;
+    background: #d23f3f;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 739px) {
+    .add-recruitment-cont{
+        padding: 10px;
+    }
+
+    .add-recruitment{
+        width: 100%;
+    }
+}

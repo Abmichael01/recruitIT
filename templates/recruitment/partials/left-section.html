@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/left-section.css' %}">
+<div class="left-section">
+    <div class="gradient"></div>
+    <div class="left-user-info">
+        {% if request.user.is_student %}
+        <img src="{{request.user.student.avatar.url}}" alt="">
+        <p>{{request.user.student}} {{request.user.student.last_name}}</p>
+        {% endif %}
+
+        {% if request.user.is_company %}
+        <img src="{{request.user.company.avatar.url}}" alt="">
+        <h3>{{request.user.company.company_name}}</h3>
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur possimus saep</h5>
+        <p>{{request.user}}</p>
+        {% endif %}
+    </div>
+</div>

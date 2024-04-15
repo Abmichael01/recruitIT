@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/_messages.css' %}">
+{% if messages %}
+<ul class="messages" >
+    {% for message in messages %}
+    <li {% if message.tags %} class="message message-{{ message.tags }}"{% endif %}>
+        <p>{{ message }}</p>
+        <i class="fa-solid fa-xmark close-message"></i>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<script>
+    const messages = document.querySelector(".messages")
+    const closeMessage = document.querySelector(".close-message")
+
+    if (closeMessage){
+        closeMessage.onclick = ()=>{
+            messages.style.height = "0px"
+            messages.style.padding =  "0px"
+        }
+    }
+    // closeMessage.addEventListener("click", ()=>{
+    //     messages.style.display = "none"
+    // })
+</script>

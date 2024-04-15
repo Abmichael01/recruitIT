@@ -1,0 +1,31 @@
+{% extends "authenticate/base.html" %}
+{% load static %}
+
+{% block title %} Verify Email {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/verify-email.css' %}">
+<div class="container">
+    <p>Your Account Has Been Created <br>Let's Verify Your Email Address</p>
+    <img src="{% static 'images/verify.svg' %}" alt="" class="image">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-field">
+                <input type="text" name="code" class="code-input" placeholder="Code" maxlength="4">
+                <button class="button verify" style="display: none;">Verify</button>
+                <button class="button get">Get Code</button>
+                
+        </div>
+    </form>
+</div>
+<div class="overlay">
+    <div class="loader-cont">
+        <div class="loader"></div>
+    </div>
+    <div class="code-sent">
+        <p>Code Sent <br>Please check your email for the verification code</p>
+        <button>Ok</button>
+    </div>
+</div>
+<script src="{% static 'js/verify.js' %}"></script>
+{% endblock content %}

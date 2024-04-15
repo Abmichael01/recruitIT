@@ -1,0 +1,54 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/apply.css' %}">
+<div class="application-cont">
+    
+    <form class="application">
+        {% csrf_token %}
+        <p class="info">If you informations are incorrect, update them on your profile before applying</p>
+        <div class="cancel-cont">
+            <i class="fa-solid fa-xmark cancel-butt"></i>
+        </div>
+
+        <div class="input-container">
+            <label for="">Full Name</label>
+            <input type="text" name="name" class="name" readonly value="{{request.user.student.first_name}} {{request.user.student.last_name}}">
+        </div>
+
+        <div class="input-container">
+            <label for="">Matric Number</label>
+            <input type="text" name="matric-no" class="matric-no" readonly value="{{request.user.student.matric_no}}">
+        </div>
+
+        <div class="input-container">
+            <label for="">Email</label>
+            <input type="text" name="email" class="email" readonly value="{{request.user.email}}">
+        </div>
+
+        
+
+        <div class="input-container">
+            <div class="doc-input-cont">
+                <iframe src="" style="display: none;"></iframe>
+                <p>Upload your IT letter</p>
+                <label for="add-doc-input" class="upload-doc-label">Upload Letter</label>
+                <input type="file" name="letter" id="add-doc-input" style="display: none;" class="letter">
+            </div>
+        </div>
+        
+
+        <button class="apply-butt">
+            <div class="not_pro">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Apply</span>
+            </div>
+            
+            <div class="pro" style="display: none;">
+                <i class="fa-solid fa-spinner processing"></i>
+                <span>Processing</span>
+            </div>
+        </button>
+
+    </form>
+</div>
+
+<script  src="{% static 'js/apply.js' %}"></script>

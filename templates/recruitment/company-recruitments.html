@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our Recruitments{% endblock title %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/company-recruitment.css' %}">
+  <div class="main">
+    <div class="main-container">
+        <h2 class="header-text">Recruitments</h2>
+        <div class="recruitments-container">
+            <div class="recruitments-nav">
+                <div class="recruitments-status">
+                    <p class="active">All Recruitment</p>
+                </div>
+                <button class="add-recruitment-butt">
+                    <i class="fas fa-plus"></i>
+                    <span>Post New Recruitment</span>
+                </button>
+            </div>
+
+            <div class="recruitments">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Recruitments</th>
+                            <th>Applications</th>
+                            <th>Seats</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {% for recruitment in recruitments %}
+                        <tr>
+                            <td>
+                                <img src="{{recruitment.image.url}}" alt="">
+                                <span>{{recruitment.title}}</span>
+                            </td>
+                            <td>{{recruitment.application_set.count}}</td>
+                            <td>{{recruitment.seats}}</td>
+                            <td>
+                                <a href="{% url 'recruitment-applications' recruitment.id %}">
+                                    <i class="fas fa-eye"></i>
+                                    <span>View Apllications</span>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="{% static 'js/company-recruitment.js' %}"></script>
+{% endblock content %}

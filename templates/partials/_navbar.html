@@ -1,0 +1,84 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/_navbar.css' %}">
+<header>
+    <div class="logo-search-box-container">
+        <div class="logo-container">
+            <h2>Recruit</h2>
+            <img src="{% static 'images/logo.png' %}" alt="">
+        </div>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search">
+            <i class="fas fa-xmark cancel-search"></i>
+        </div>
+    </div>
+ 
+    <nav>
+        
+       <div class="nav-links">
+        <a href="{% url 'home' %}" class="nav-link {% if page == 'home' %} active-nav {% endif %}">
+            <i class="fa-solid fa-house"></i>
+            <p>Home</p>
+        </a>
+
+       
+            {% if request.user.is_student %}
+            <a href="{% url 'student-applications' %}" class="nav-link {% if page == 'student_applications' %} active-nav {% endif %}">
+                <i class="fa-solid fa-briefcase"></i>
+                <p>Applications</p>
+            </a>
+            {% endif %}
+
+            {% if request.user.is_company %}
+            <a href="{% url 'company-recruitments' %}" class="nav-link {% if page == 'company_recruitments' %} active-nav {% endif %}">
+                <i class="fa-solid fa-briefcase"></i>
+                <p>Recruitments</p>
+            </a>
+            {% endif %}
+        
+
+        <a href="{% url 'notifications' %}" class="nav-link {% if page == 'notifications' %} active-nav {% endif %} notification-link">
+            <i class="fa-solid fa-bell">
+                <span></span>
+            </i>
+            <p>Notifications</p>
+            
+        </a>
+       </div>
+
+        <div class="user-link">
+            <div class="user-link-main">
+                {% if request.user.is_student %}
+                <img src="{{request.user.student.avatar.url}}" alt="">
+                {% else %}
+                <img src="{{request.user.company.avatar.url}}" alt="">
+                {% endif %}
+                <p>Me</p>
+                <i class="fa-solid fa-caret-down arrow-down"></i>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-main">
+                    <div class="user-infos">
+                        {% if request.user.is_student %}
+                        <img src="{{request.user.student.avatar.url}}" alt="">
+                        {% else %}
+                        <img src="{{request.user.company.avatar.url}}" alt="">
+                        {% endif %}
+                        <div class="user-info">
+                            <p>Oyekola Michael</p>
+                            <p>This is the user bio</p>
+                        </div>
+                    </div>
+                    <div  class="view-user-profile">
+                        <a href="{% url 'profile' request.user.id %}">View Profile</a>
+                    </div>
+                    <a href="#" class="settings-link">Settings and Privacy</a>
+                </div>
+                <a href="{% url 'logout' %}" class="logout-link">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

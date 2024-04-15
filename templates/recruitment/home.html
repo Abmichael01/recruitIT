@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="main">
+    {% include "recruitment/partials/left-section.html" %}
+
+   <div class="middle-section">
+    
+        {% if request.user.is_student %}
+        <div class="filter-cont">
+            <p>Filters</p>
+            
+            <div class="filters">
+                <a href="#" class="filter active-filter">All</a>
+
+                <select name="" id="" class="filter">
+                    <option value="">Date filter</option>
+                    <option value="">Today</option>
+                    <option value="">This week</option>
+                    <option value="">This month</option>
+                </select>
+
+                <select id="nigeriaStates" class="filter">
+                    <option value="location">Location</option>
+                    <option value="Abia">Abia</option>
+                    <option value="Adamawa">Adamawa</option>
+                    <option value="Akwa Ibom">Akwa Ibom</option>
+                    <option value="Anambra">Anambra</option>
+                    <option value="Bauchi">Bauchi</option>
+                    <option value="Bayelsa">Bayelsa</option>
+                    <option value="Benue">Benue</option>
+                    <option value="Borno">Borno</option>
+                    <option value="Cross River">Cross River</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Ebonyi">Ebonyi</option>
+                    <option value="Edo">Edo</option>
+                    <option value="Ekiti">Ekiti</option>
+                    <option value="Enugu">Enugu</option>
+                    <option value="Gombe">Gombe</option>
+                    <option value="Imo">Imo</option>
+                    <option value="Jigawa">Jigawa</option>
+                    <option value="Kaduna">Kaduna</option>
+                    <option value="Kano">Kano</option>
+                    <option value="Katsina">Katsina</option>
+                    <option value="Kebbi">Kebbi</option>
+                    <option value="Kogi">Kogi</option>
+                    <option value="Kwara">Kwara</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Nasarawa">Nasarawa</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Ogun">Ogun</option>
+                    <option value="Ondo">Ondo</option>
+                    <option value="Osun">Osun</option>
+                    <option value="Oyo">Oyo</option>
+                    <option value="Plateau">Plateau</option>
+                    <option value="Rivers">Rivers</option>
+                    <option value="Sokoto">Sokoto</option>
+                    <option value="Taraba">Taraba</option>
+                    <option value="Yobe">Yobe</option>
+                    <option value="Zamfara">Zamfara</option>
+                    <option value="Federal Capital Territory">Abuja</option>
+                </select>
+            </div>
+        </div>
+        {% else %}
+        
+        <div class="new-recruitment">
+            <div class="company-img">
+                <img src="{% static 'images/company-logo.jpg' %}" alt="">
+            </div>
+            <div class="post-new-recruitment add-recruitment-butt">
+                <i class="fa-solid fa-plus"></i>
+                <span>Post New Recruitment</span>
+            </div>
+        </div>
+        {% endif %}
+        
+    {% include "recruitment/partials/recruitments.html" %}
+
+   </div>
+   {% include "recruitment/partials/right-section.html" %}
+</div>
+<script type="module" src="{% static 'js/home.js' %}"></script>
+{% endblock content %}

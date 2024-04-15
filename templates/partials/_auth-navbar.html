@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/_auth-navbar.css' %}">
+<header>
+    <a href="{% url 'home' %}">
+        <div class="logo-container">
+            <h2>Recruit</h2>
+            <img src="{% static 'images/logo.png' %}" alt="">
+        </div>
+    </a>
+
+    {% if page == "login" or page == "register" %}
+    <nav>
+        <a href="{% url 'register' %}">Join now</a>
+        <a href="{% url 'login' %}">Sign in</a>
+    </nav>
+    {% endif %}
+</header>
