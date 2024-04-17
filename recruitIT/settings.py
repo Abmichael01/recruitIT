@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     # installed apps
     "authenticate",
     "recruitment",
-    "profiles"
+    "profiles",
 ]
 
 # custom user model
