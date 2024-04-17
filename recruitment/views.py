@@ -33,7 +33,6 @@ def role_required(function):
 
 
 @login_required
-@role_required
 def home(request):
     recruitments = Recruitment.objects.all()
     saved_recruitments = Saved_Recruitment.objects.filter(user=request.user)
