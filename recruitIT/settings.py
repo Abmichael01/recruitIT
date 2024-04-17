@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import django_heroku
+import dj_database_url
 
 load_dotenv()
 
@@ -164,6 +166,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
