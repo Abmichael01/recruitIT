@@ -7,7 +7,6 @@ from django.contrib import messages
 from django.utils import timezone
 from functools import wraps
 from django.urls import reverse
-
 from django.core.mail import send_mail
 
 
