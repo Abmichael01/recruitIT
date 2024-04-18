@@ -145,7 +145,7 @@ def send_verification_code(request):
     user.save()
 
     subject = "Verify Your Email Address"
-    sender = "recruit.it000@gmail.com"
+    sender = "abmichael109@gmail.com"
     reciever = [user.email, ]
     html_message = render_to_string("authenticate/verification-email.html", {"code": code, "email": email})
     plain_message = strip_tags(html_message)
