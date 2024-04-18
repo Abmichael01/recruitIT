@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fk_bp*7x@d%97mgz+46%c#4@_gq0osh9-z*=j@j%3qg8(358er'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["recruitit-47654d4acc27.herokuapp.com", "127.0.0.1", "localhost"]
 
@@ -71,6 +71,7 @@ GOOGLE_SSO_PRE_LOGIN_CALLBACK = "authenticate.hooks.pre_login_user"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
