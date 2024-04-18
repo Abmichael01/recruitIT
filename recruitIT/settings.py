@@ -71,7 +71,7 @@ GOOGLE_SSO_CLIENT_SECRET = os.getenv('GOOGLE_SSO_CLIENT_SECRET')
 GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
 GOOGLE_SSO_ENABLED = True
 
-GOOGLE_SSO_LOGO_URL = "images/logo.png"
+GOOGLE_SSO_LOGO_URL = "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg"
 
 GOOGLE_SSO_TEXT = "Continue with Google"
 
