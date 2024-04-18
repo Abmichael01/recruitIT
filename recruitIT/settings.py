@@ -29,6 +29,9 @@ ALLOWED_HOSTS = ["recruitit-47654d4acc27.herokuapp.com", "127.0.0.1", "localhost
 # Application definition
 
 INSTALLED_APPS = [
+    # custom admin app
+    "jazzmin",
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +54,7 @@ INSTALLED_APPS = [
     "authenticate",
     "recruitment",
     "profiles",
+
 ]
 
 # custom user model
@@ -188,4 +192,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 
+JAZZMIN_SETTINGS = {
+    "site_header": "RecruitIT",
+    "site_brand": "RecruitIT: IT Placement gets easier",
+    "site_logo": "images/logo.png",
+    "copyright": "recruitit.site",
+}
 
