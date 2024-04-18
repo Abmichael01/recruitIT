@@ -11,9 +11,21 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
+from functools import wraps
 
 
 
+
+def login_required(function):
+    @wraps(function)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            next_url = request.get_full_path()
+            login_url = '{}?next={}'.format(reverse('login'), next_url)
+            messages.info(request, "Please log in to access this page.")
+            return redirect(login_url)
+        return function(request, *args, **kwargs)
+    return wrapper
 
 
 
@@ -161,6 +173,7 @@ def send_verification_code(request):
         })
     
 
+@login_required
 def verify_email(request):
     print(request.user)
     email = request.session.get("verification_email", None)
