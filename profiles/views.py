@@ -5,9 +5,26 @@ from django.contrib.auth.decorators import login_required
 from custom_user.models import User
 from recruitment.models import Recruitment, Application, Saved_Recruitment
 from django.utils import timezone
+from functools import wraps
+from django.urls import reverse
 
 
-@login_required(login_url="login")
+
+
+
+def login_required(function):
+    @wraps(function)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            next_url = request.get_full_path()
+            login_url = '{}?next={}'.format(reverse('login'), next_url)
+            messages.info(request, "Please log in to access this page.")
+            return redirect(login_url)
+        return function(request, *args, **kwargs)
+    return wrapper
+
+
+@login_required
 def profile_setup(request):
     user = request.user
     if request.method == "POST":
@@ -69,6 +86,8 @@ def profile_setup(request):
         "is_company": is_company,
     })
 
+
+@login_required
 def profile(request, pk):
     user = User.objects.get(id=pk)
     recruitments = Recruitment.objects.filter(user=user)
@@ -86,6 +105,9 @@ def profile(request, pk):
         "user": user,       
     })
 
+
+
+@login_required
 def edit_profile(request):
     user = request.user
 
