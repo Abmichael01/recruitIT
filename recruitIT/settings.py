@@ -73,7 +73,7 @@ GOOGLE_SSO_ENABLED = True
 
 GOOGLE_SSO_LOGO_URL = "images/logo.png"
 
-GOOGLE_SSO_TEXT = "Sign in with Google"
+GOOGLE_SSO_TEXT = "Continue with Google"
 
 GOOGLE_SSO_PRE_LOGIN_CALLBACK = "authenticate.hooks.pre_login_user"
 
