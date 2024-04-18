@@ -54,7 +54,7 @@ getBtn.addEventListener("click", (event)=>{
         }else{
             loading.style.display = "none"
             codeSent.style.display = "block"
-            codeSentInfo.textContent = data.code_error
+            codeSentInfo.textContent = "An error occured while sending the code"
         }
     })
 
