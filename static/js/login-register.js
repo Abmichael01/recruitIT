@@ -6,6 +6,7 @@ const submitBtn = document.querySelector(".submit");
 
 
 submitBtn.disabled = true
+submitBtn.classList.add("submit-disabled")
 
 emailInput.addEventListener("keyup", (event)=>{
     emailVal = event.target.value;
