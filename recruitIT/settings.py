@@ -63,6 +63,7 @@ AUTH_USER_MODEL = 'custom_user.User'
 LOGIN_URL = '/authenticate/login'
 
 
+# google sso configs
 GOOGLE_SSO_CLIENT_ID = os.getenv('GOOGLE_SSO_CLIENT_ID')
 GOOGLE_SSO_PROJECT_ID = os.getenv('GOOGLE_SSO_PROJECT_ID')
 GOOGLE_SSO_CLIENT_SECRET = os.getenv('GOOGLE_SSO_CLIENT_SECRET')
@@ -70,7 +71,9 @@ GOOGLE_SSO_CLIENT_SECRET = os.getenv('GOOGLE_SSO_CLIENT_SECRET')
 GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
 GOOGLE_SSO_ENABLED = True
 
-GOOGLE_SSO_LOGO_URL = "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg"
+GOOGLE_SSO_LOGO_URL = "images/logo.png"
+
+GOOGLE_SSO_TEXT = "Sign in with Google"
 
 GOOGLE_SSO_PRE_LOGIN_CALLBACK = "authenticate.hooks.pre_login_user"
 
