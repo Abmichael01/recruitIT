@@ -175,12 +175,12 @@ def send_verification_code(request):
         })
     
 
-@login_required
+
 def verify_email(request):
     print(request.user)
     email = request.session.get("verification_email", None)
-    # if email is not None:
-    #     user = User.objects.get(email=email)
+    if email is None:
+        return redirect("login")
     user = User.objects.get(email=email)
 
     print(email)
