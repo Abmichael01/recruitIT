@@ -162,9 +162,11 @@ def send_verification_code(request):
         message.attach_alternative(html_message, "text/html")
         message.send()
     except Exception as e:
+        print(str(e))
         return JsonResponse({
             "code_error": f"An error occured: {str(e)}"
         })
+        print("error dey ooo")
     else:
         user.verification_code = code
         user.save()
@@ -186,6 +188,7 @@ def verify_email(request):
     print(email)
     if request.method == "POST":
         code = request.POST["code"]
+
         if user.verification_code == code:
             user.is_active = True
             user.save()
