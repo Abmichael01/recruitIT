@@ -187,7 +187,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+
 
 # Email Config
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -206,4 +206,8 @@ JAZZMIN_SETTINGS = {
     "site_logo": "images/logo.png",
     "copyright": "recruitit.site",
 }
+
+
+
+django_heroku.settings(locals())
 
