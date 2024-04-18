@@ -198,6 +198,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 
+
+
 JAZZMIN_SETTINGS = {
     "site_header": "RecruitIT",
     "site_brand": "RecruitIT: IT Placement gets easier",
