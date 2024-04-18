@@ -5,6 +5,7 @@ const loader = document.querySelector(".loader");
 const submitBtn = document.querySelector(".submit");
 
 
+submitBtn.disabled = true
 
 emailInput.addEventListener("keyup", (event)=>{
     emailVal = event.target.value;
