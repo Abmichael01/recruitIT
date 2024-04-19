@@ -36,6 +36,8 @@ def profile_completion_required(function):
         if request.user.profile_completed == False:
             messages.info("request", "Please setup to profile to continue")
             return redirect("profile-setup")
+        return function(request, *args, **kwargs )
+    return wrapper
 
 
 @login_required
