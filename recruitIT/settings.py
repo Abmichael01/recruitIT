@@ -64,9 +64,9 @@ LOGIN_URL = '/authenticate/login'
 
 
 # google sso configs
-GOOGLE_SSO_CLIENT_ID = os.getenv('GOOGLE_SSO_CLIENT_ID')
-GOOGLE_SSO_PROJECT_ID = os.getenv('GOOGLE_SSO_PROJECT_ID')
-GOOGLE_SSO_CLIENT_SECRET = os.getenv('GOOGLE_SSO_CLIENT_SECRET')
+GOOGLE_SSO_CLIENT_ID = os.environ.get('GOOGLE_SSO_CLIENT_ID')
+GOOGLE_SSO_PROJECT_ID = os.environ.get('GOOGLE_SSO_PROJECT_ID')
+GOOGLE_SSO_CLIENT_SECRET = os.environ.get('GOOGLE_SSO_CLIENT_SECRET')
 
 GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
 GOOGLE_SSO_ENABLED = True
@@ -120,19 +120,19 @@ WSGI_APPLICATION = 'recruitIT.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.getenv("DATABSE_NAME"),
-    #     'USER': os.getenv("DATABSE_USER"),
-    #     'PASSWORD': os.getenv("DATABSE_PASSWORD"),
-    #     'HOST': os.getenv("DATABSE_HOST"),
-    #     'PORT': os.getenv("DATABSE_PORT"),       
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get("DATABSE_NAME"),
+        'USER': os.environ.get("DATABSE_USER"),
+        'PASSWORD': os.environ.get("DATABSE_PASSWORD"),
+        'HOST': os.environ.get("DATABSE_HOST"),
+        'PORT': os.environ.get("DATABSE_PORT"),       
+    }
 }
 
 
@@ -193,7 +193,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'abmichael109@gmail.com'
-EMAIL_HOST_PASSWORD = "xryp odel cxng rgdz"
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
