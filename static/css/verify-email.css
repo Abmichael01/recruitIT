@@ -154,20 +154,11 @@
     }
 }
 
-
-@media screen and (max-width: 600px) {
-    .container p{
-        font-size: 25px;
-        margin-bottom: 20px;
-        text-align: center;
-        font-weight: 500;
-    }
-
-    .input-field{
-        width: 250px;
-        font-size: 18px;
-    }
-
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -176,6 +167,22 @@
         margin-bottom: 20px;
         text-align: center;
         font-weight: 500;
+    }
+
+
+    .input-field{
+        font-size: 18px;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 400px) {
+    .input-field{
+        width: 100%;
+        font-size: 18px;
     }
 
 }
