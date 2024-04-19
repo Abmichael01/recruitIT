@@ -64,9 +64,9 @@ LOGIN_URL = '/authenticate/login'
 
 
 # google sso configs
-GOOGLE_SSO_CLIENT_ID = os.environ.get('GOOGLE_SSO_CLIENT_ID')
-GOOGLE_SSO_PROJECT_ID = os.environ.get('GOOGLE_SSO_PROJECT_ID')
-GOOGLE_SSO_CLIENT_SECRET = os.environ.get('GOOGLE_SSO_CLIENT_SECRET')
+GOOGLE_SSO_CLIENT_ID = "781622727983-cg7kfosgfn4u173gt652ph7g57epl5kg.apps.googleusercontent.com"
+GOOGLE_SSO_PROJECT_ID = "recruitit-420101"
+GOOGLE_SSO_CLIENT_SECRET = "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"
 
 GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
 GOOGLE_SSO_ENABLED = True
