@@ -30,7 +30,7 @@ def profile_setup(request):
     if request.method == "POST":
         if user.is_student == True:
             first_name = request.POST["first_name"]
-            avatar = request.FILES["image"]
+            avatar = request.FILES.get("image")
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
 
