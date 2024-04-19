@@ -91,6 +91,16 @@ form{
     width: 500px;
 }
 
+.input-container select{
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    border: 2px solid #dbdbdb;
+    outline-color: var(--primary);
+    width: 500px;
+}
+
 textarea{
     padding: 10px 20px;
     font-size: 18px;
