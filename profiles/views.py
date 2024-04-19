@@ -34,6 +34,16 @@ def profile_setup(request):
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
 
+            if first_name == "":
+                messages.error(request, "Please enter your first name")
+                return redirect("profile-setup")
+            if last_name == "":
+                messages.error(request, "Please enter your last name")
+                return redirect("profile-setup")
+            if matric_no == "":
+                messages.error(request, "Please enter your matric number")
+                return redirect("profile-setup")
+
             user_profile =  Student.objects.get(user=user)
             user_profile.first_name = first_name
             user_profile.last_name = last_name
@@ -54,6 +64,16 @@ def profile_setup(request):
             address = request.POST["address"]
             city = request.POST["city"]
             state = request.POST["state"]
+
+            if first_name == "":
+                messages.error(request, "Please enter your first name")
+                return redirect("profile-setup")
+            if last_name == "":
+                messages.error(request, "Please enter your last name")
+                return redirect("profile-setup")
+            if matric_no == "":
+                messages.error(request, "Please enter your matric number")
+                return redirect("profile-setup")
 
             user_profile =  Company.objects.get(user=user)
             user_profile.company_name = company_name
