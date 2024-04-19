@@ -56,6 +56,7 @@ def profile_setup(request):
             
             user_profile.save()
             user.profile_completed = True
+            user.save()
 
         if user.is_company == True:
             company_name = request.POST["company_name"]
@@ -100,6 +101,7 @@ def profile_setup(request):
                 user_profile.avatar = user_profile.avatar
             user_profile.save()
             user.profile_completed = True
+            user.save()
 
         messages.success(request, "Profile setup was successful")
         return redirect("home")
