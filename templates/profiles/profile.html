@@ -38,7 +38,7 @@
                 <p class="profile-location">{{user.company.address}}, {{user.company.city}}, {{user.company.state}}</p>
             </div>
             {% endif %}
-            {% if request.user.is_authenticated %}
+            {% if request.user == user %}
             <a href="{% url 'edit-profile' %}" class="edit-profile">
                 <i class="fa-solid fa-pencil-alt"></i>
                 <p>Edit Profile</p>

@@ -83,45 +83,45 @@
 
                     <div class="input-container">
                         <!-- <input type="text" name="state" placeholder="State" value="{{profile.state}}"> -->
-                        <select id="nigeriaStates" name="state" class="filter">
-                            <option value="State">State</option>
-                            <option value="Abia">Abia</option>
-                            <option value="Adamawa">Adamawa</option>
-                            <option value="Akwa Ibom">Akwa Ibom</option>
-                            <option value="Anambra">Anambra</option>
-                            <option value="Bauchi">Bauchi</option>
-                            <option value="Bayelsa">Bayelsa</option>
-                            <option value="Benue">Benue</option>
-                            <option value="Borno">Borno</option>
-                            <option value="Cross River">Cross River</option>
-                            <option value="Delta">Delta</option>
-                            <option value="Ebonyi">Ebonyi</option>
-                            <option value="Edo">Edo</option>
-                            <option value="Ekiti">Ekiti</option>
-                            <option value="Enugu">Enugu</option>
-                            <option value="Gombe">Gombe</option>
-                            <option value="Imo">Imo</option>
-                            <option value="Jigawa">Jigawa</option>
-                            <option value="Kaduna">Kaduna</option>
-                            <option value="Kano">Kano</option>
-                            <option value="Katsina">Katsina</option>
-                            <option value="Kebbi">Kebbi</option>
-                            <option value="Kogi">Kogi</option>
-                            <option value="Kwara">Kwara</option>
-                            <option value="Lagos">Lagos</option>
-                            <option value="Nasarawa">Nasarawa</option>
-                            <option value="Niger">Niger</option>
-                            <option value="Ogun">Ogun</option>
-                            <option value="Ondo">Ondo</option>
-                            <option value="Osun">Osun</option>
-                            <option value="Oyo">Oyo</option>
-                            <option value="Plateau">Plateau</option>
-                            <option value="Rivers">Rivers</option>
-                            <option value="Sokoto">Sokoto</option>
-                            <option value="Taraba">Taraba</option>
-                            <option value="Yobe">Yobe</option>
-                            <option value="Zamfara">Zamfara</option>
-                            <option value="Federal Capital Territory">Abuja</option>
+                        <select id="nigeriaStates" name="state">
+                            <option value="" {% if page == 'edit-profile' and profile.state == "" %}selected{% endif %}>State</option>
+                            <option value="Abia" {% if profile.state == "Abia" %}selected{% endif %}>Abia</option>
+                            <option value="Adamawa" {% if profile.state == "Adamawa" %}selected{% endif %}>Adamawa</option>
+                            <option value="Akwa Ibom" {% if profile.state == "Akwa Ibom" %}selected{% endif %}>Akwa Ibom</option>
+                            <option value="Anambra" {% if profile.state == "Anambra" %}selected{% endif %}>Anambra</option>
+                            <option value="Bauchi" {% if profile.state == "Bauchi" %}selected{% endif %}>Bauchi</option>
+                            <option value="Bayelsa" {% if profile.state == "Bayelsa" %}selected{% endif %}>Bayelsa</option>
+                            <option value="Benue" {% if profile.state == "Benue" %}selected{% endif %}>Benue</option>
+                            <option value="Borno" {% if profile.state == "Borno" %}selected{% endif %}>Borno</option>
+                            <option value="Cross River" {% if profile.state == "Cross River" %}selected{% endif %}>Cross River</option>
+                            <option value="Delta" {% if profile.state == "Delta" %}selected{% endif %}>Delta</option>
+                            <option value="Ebonyi" {% if profile.state == "Ebonyi" %}selected{% endif %}>Ebonyi</option>
+                            <option value="Edo" {% if profile.state == "Edo" %}selected{% endif %}>Edo</option>
+                            <option value="Ekiti" {% if profile.state == "Ekiti" %}selected{% endif %}>Ekiti</option>
+                            <option value="Enugu" {% if profile.state == "Enugu" %}selected{% endif %}>Enugu</option>
+                            <option value="Gombe" {% if profile.state == "Gombe" %}selected{% endif %}>Gombe</option>
+                            <option value="Imo" {% if profile.state == "Imo" %}selected{% endif %}>Imo</option>
+                            <option value="Jigawa" {% if profile.state == "Jigawa" %}selected{% endif %}>Jigawa</option>
+                            <option value="Kaduna" {% if profile.state == "Kaduna" %}selected{% endif %}>Kaduna</option>
+                            <option value="Kano" {% if profile.state == "Kano" %}selected{% endif %}>Kano</option>
+                            <option value="Katsina" {% if profile.state == "Katsina" %}selected{% endif %}>Katsina</option>
+                            <option value="Kebbi" {% if profile.state == "Kebbi" %}selected{% endif %}>Kebbi</option>
+                            <option value="Kogi" {% if profile.state == "Kogi" %}selected{% endif %}>Kogi</option>
+                            <option value="Kwara" {% if profile.state == "Kwara" %}selected{% endif %}>Kwara</option>
+                            <option value="Lagos" {% if profile.state == "Lagos" %}selected{% endif %}>Lagos</option>
+                            <option value="Nasarawa" {% if profile.state == "Nasarawa" %}selected{% endif %}>Nasarawa</option>
+                            <option value="Niger" {% if profile.state == "Niger" %}selected{% endif %}>Niger</option>
+                            <option value="Ogun" {% if profile.state == "Ogun" %}selected{% endif %}>Ogun</option>
+                            <option value="Ondo" {% if profile.state == "Ondo" %}selected{% endif %}>Ondo</option>
+                            <option value="Osun" {% if profile.state == "Osun" %}selected{% endif %}>Osun</option>
+                            <option value="Oyo" {% if profile.state == "Oyo" %}selected{% endif %}>Oyo</option>
+                            <option value="Plateau" {% if profile.state == "Plateau" %}selected{% endif %}>Plateau</option>
+                            <option value="Rivers" {% if profile.state == "Rivers" %}selected{% endif %}>Rivers</option>
+                            <option value="Sokoto" {% if profile.state == "Sokoto" %}selected{% endif %}>Sokoto</option>
+                            <option value="Taraba" {% if profile.state == "Taraba" %}selected{% endif %}>Taraba</option>
+                            <option value="Yobe" {% if profile.state == "Yobe" %}selected{% endif %}>Yobe</option>
+                            <option value="Zamfara" {% if profile.state == "Zamfara" %}selected{% endif %}>Zamfara</option>
+                            <option value="Federal Capital Territory" {% if profile.state == "Federal Capital Territory" %}selected{% endif %}>Abuja</option>
                         </select>
                     </div>
 
