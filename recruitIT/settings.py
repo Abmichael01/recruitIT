@@ -127,11 +127,11 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("DATABSE_NAME"),
-        'USER': os.environ.get("DATABSE_USER"),
-        'PASSWORD': os.environ.get("DATABSE_PASSWORD"),
-        'HOST': os.environ.get("DATABSE_HOST"),
-        'PORT': os.environ.get("DATABSE_PORT"),       
+        'NAME': "railway",
+        'USER': "postgres",
+        'PASSWORD': "eFufACiXvuddgjFWrGBLianejKCzGwpE",
+        'HOST': "roundhouse.proxy.rlwy.net",
+        'PORT': "40705",       
     }
 }
 
