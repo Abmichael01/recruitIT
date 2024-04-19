@@ -64,9 +64,9 @@ LOGIN_URL = '/authenticate/login'
 
 
 # google sso configs
-GOOGLE_SSO_CLIENT_ID = "781622727983-cg7kfosgfn4u173gt652ph7g57epl5kg.apps.googleusercontent.com"
-GOOGLE_SSO_PROJECT_ID = "recruitit-420101"
-GOOGLE_SSO_CLIENT_SECRET = "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"
+GOOGLE_SSO_CLIENT_ID = "437419063186-2e743qmmaohr3a3bu3jpab1fpmk26qo7.apps.googleusercontent.com"
+GOOGLE_SSO_PROJECT_ID = "michael-375514"
+GOOGLE_SSO_CLIENT_SECRET = "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"
 
 GOOGLE_SSO_ALLOWABLE_DOMAINS = ["gmail.com"]
 GOOGLE_SSO_ENABLED = True
