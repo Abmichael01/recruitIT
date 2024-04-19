@@ -34,7 +34,7 @@ def profile_completion_required(function):
     @wraps(function)
     def wrapper(request, *args, **kwargs):
         if request.user.profile_completed == False:
-            messages.info("request", "Please setup to profile to continue")
+            messages.info(request, "Please setup to profile to continue")
             return redirect("profile-setup")
         return function(request, *args, **kwargs )
     return wrapper
