@@ -30,8 +30,17 @@ def role_required(function):
             return function(request, *args, **kwargs )
     return wrapper
 
+def profile_completion_required(function):
+    @wraps(function)
+    def wrapper(request, *args, **kwargs):
+        if request.user.profile_completed == False:
+            messages.info("request", "Please setup to profile to continue")
+            return redirect("profile-setup")
+
 
 @login_required
+@role_required
+@profile_completion_required
 def home(request):
     recruitments = Recruitment.objects.all()
     saved_recruitments = Saved_Recruitment.objects.filter(user=request.user)
@@ -60,6 +69,8 @@ def home(request):
 }) 
 
 @login_required
+@role_required
+@profile_completion_required
 def recruitment(request, pk):
     recruitments = Recruitment.objects.filter(id=pk)
     saved_recruitments = Saved_Recruitment.objects.filter(user=request.user)
@@ -73,6 +84,8 @@ def recruitment(request, pk):
     })
 
 @login_required
+@role_required
+@profile_completion_required
 def add_recruitment(request):
     if request.method == "POST":
         title = request.POST.get('title')
@@ -120,6 +133,8 @@ def add_recruitment(request):
         
         
 @login_required
+@role_required
+@profile_completion_required
 def apply(request):
     if request.method == "POST":
         user = request.user
@@ -242,6 +257,8 @@ def approve_application(request):
 
 
 @login_required
+@role_required
+@profile_completion_required
 def cancel_application(request):
     if request.method == "POST":
         application_id = request.POST.get("application_id")
@@ -263,6 +280,8 @@ def cancel_application(request):
 
 
 @login_required
+@role_required
+@profile_completion_required
 def save_recruitment(request):
     if request.method == "POST":
         user = request.user
@@ -288,6 +307,8 @@ def save_recruitment(request):
 
 
 @login_required
+@role_required
+@profile_completion_required
 def company_recruitments(request):
     recruitments = Recruitment.objects.filter(user=request.user)
     return render(request, "recruitment/company-recruitments.html", {
@@ -297,6 +318,8 @@ def company_recruitments(request):
     })  
 
 @login_required
+@role_required
+@profile_completion_required
 def recruitment_application(request, pk):
     recruitment = Recruitment.objects.get(id=pk)
     r_applications = Application.objects.filter(recruitment=recruitment)
@@ -306,6 +329,8 @@ def recruitment_application(request, pk):
     }) 
 
 @login_required
+@role_required
+@profile_completion_required
 def student_applications(request):
     s_applications = Application.objects.filter(user=request.user)
     return render(request, "recruitment/student-applications.html", {
@@ -314,6 +339,8 @@ def student_applications(request):
     })
 
 @login_required
+@role_required
+@profile_completion_required
 def notifications(request):
     notifications = Notification.objects.filter(user=request.user)
 
