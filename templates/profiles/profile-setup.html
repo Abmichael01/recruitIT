@@ -84,7 +84,7 @@
                     <div class="input-container">
                         <!-- <input type="text" name="state" placeholder="State" value="{{profile.state}}"> -->
                         <select id="nigeriaStates" name="state">
-                            <option value="" {% if page == 'edit-profile' and profile.state == "" %}selected{% endif %}>State</option>
+                            <option value="State" {% if page == 'edit-profile' and profile.state == "state" %}selected{% endif %}>Select State</option>
                             <option value="Abia" {% if profile.state == "Abia" %}selected{% endif %}>Abia</option>
                             <option value="Adamawa" {% if profile.state == "Adamawa" %}selected{% endif %}>Adamawa</option>
                             <option value="Akwa Ibom" {% if profile.state == "Akwa Ibom" %}selected{% endif %}>Akwa Ibom</option>
