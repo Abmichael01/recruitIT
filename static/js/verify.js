@@ -51,7 +51,9 @@ getBtn.addEventListener("click", (event)=>{
                 }
                     
             }, 1000)
-        }else{
+        }else if(data.email_is_none){
+            window.href = "/authenticate/login"
+        } else{
             loading.style.display = "none"
             codeSent.style.display = "block"
             codeSentInfo.textContent = "An error occured while sending the code"

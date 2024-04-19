@@ -132,6 +132,15 @@ def register_user(request):
 
 def send_verification_code(request):
     email = request.session.get("verification_email", None)
+    
+    if email is None:
+        messages.info(request, "Please login to continue")
+        return JsonResponse(
+            {
+                "email_is_none": True
+            }
+        )
+        
     user = User.objects.get(email=email)
 
     num1 = str(random.randint(0, 9))
@@ -181,8 +190,7 @@ def send_verification_code(request):
 def verify_email(request):
     print(request.user)
     email = request.session.get("verification_email", None)
-    if email is None:
-        return redirect("login")
+        
     user = User.objects.get(email=email)
 
     print(email)
