@@ -38,6 +38,7 @@
     border: 2px solid var(--primary);
     object-fit: cover;
     object-position: center;
+    
 }
 
 .left-section .left-user-info h5{
