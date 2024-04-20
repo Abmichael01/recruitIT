@@ -45,17 +45,17 @@
                         <span>
                             {% with time_diff=recruitment.created|timesince:current_time %}
                                 {% if "year" in time_diff %}
-                                    {{ time_diff|slice:":1" }}y
+                                    {{ time_diff|slice:":2" }}y
                                 {% elif "month" in time_diff %}
-                                    {{ time_diff|slice:":1" }}mo
+                                    {{ time_diff|slice:":2" }}mo
                                 {% elif "week" in time_diff %}
-                                    {{ time_diff|slice:":1" }}wk
+                                    {{ time_diff|slice:":2" }}wk
                                 {% elif "day" in time_diff %}
-                                    {{ time_diff|slice:":1" }}d
+                                    {{ time_diff|slice:":2" }}d
                                 {% elif "hour" in time_diff %}
-                                    {{ time_diff|slice:":1" }}hr
+                                    {{ time_diff|slice:":2" }}hr
                                 {% else %}
-                                    {{ time_diff|slice:":1" }}min
+                                    {{ time_diff|slice:":2" }}min
                                 {% endif %}
                             {% endwith %}
                         </span>
