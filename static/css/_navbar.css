@@ -303,7 +303,7 @@ nav{
     justify-self: flex-start;
 }
 
-.logout-link:hover, .settings-link:hover{
+.logout-link:hover, .dropdown-link:hover{
     text-decoration: underline;
 }
 
