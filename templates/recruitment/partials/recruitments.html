@@ -116,3 +116,9 @@
     </div>
     {% endfor %}
 </div>
+
+{% if recruitments.count == 0 %}
+  <div class="no-recruitment">
+    <p>Your filter did not match any recruitment</p>
+  </div>
+{% endif %}
