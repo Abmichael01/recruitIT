@@ -79,3 +79,19 @@ form.addEventListener("submit", (e)=>{
 
 })
 
+
+const showPassword = document.querySelector(".show-password")
+const hidePassword = document.querySelector(".hide-password")
+// const passwordInput = document.querySelector(".password-input")
+
+hidePassword.addEventListener("click", ()=>{
+    passwordInput.type = "password"
+    hidePassword.style.display = "none"
+    showPassword.style.display = "block"
+})
+
+showPassword.addEventListener("click", ()=>{
+    passwordInput.type = "text"
+    hidePassword.style.display = "block"
+    showPassword.style.display = "none"
+})
