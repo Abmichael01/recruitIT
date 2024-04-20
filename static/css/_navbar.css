@@ -287,6 +287,8 @@ nav{
     font-size: 15px;
     border-bottom: var(--bw) solid var(--bc);
     color: #333;
+    display: flex;
+    gap: 5px;
 }
 
 .logout-link{
