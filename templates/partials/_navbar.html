@@ -68,12 +68,24 @@
                         {% endif %}
                         <div class="user-info">
                             <p>{{request.user.student}}</p>
+                            <p>{{request.user.student.matric_no}}</p>
                         </div>
                     </div>
                     <div  class="view-user-profile">
                         <a href="{% url 'profile' request.user.id %}">View Profile</a>
                     </div>
-                    <a href="#" class="settings-link">Settings and Privacy</a>
+                    <a href="#" class="settings-link">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <p>Saved Recruitments</p>
+                    </a>
+                    <a href="{% url 'edit-profile' %}" class="settings-link">
+                        <i class="fa-solid fa-pencil-alt"></i>
+                        <p>Edit Profile</p>
+                    </a>
+                    <a href="#" class="settings-link">
+                        <i class="fa-solid fa-cog"></i>
+                        <p>Settings and Privacy</p>
+                    </a>
                 </div>
                 <a href="{% url 'logout' %}" class="logout-link">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
