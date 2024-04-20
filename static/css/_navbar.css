@@ -290,7 +290,7 @@ nav{
     align-items: center;
 }
 
-.dropdown-link p, .dropdown-link i{
+.dropdown-link span, .dropdown-link i{
     font-size: 15px;
     color: #333;
 }
