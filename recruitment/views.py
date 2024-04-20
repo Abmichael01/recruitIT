@@ -45,6 +45,19 @@ def profile_completion_required(function):
 @profile_completion_required
 def home(request):
     recruitments = Recruitment.objects.all()
+
+    if request.method == "GET":
+        state_filter = request.GET.get("state-filter")
+        
+        if state_filter == "state" or state_filter is None:
+            recruitments = Recruitment.objects.all()
+            # return redirect("home")
+        else:
+            recruitments = Recruitment.objects.filter(user__company__state=state_filter)
+    else:
+        recruitments = Recruitment.objects.all()
+        
+    print(recruitments)
     saved_recruitments = Saved_Recruitment.objects.filter(user=request.user)
     saved_recruitment_ids = set(saved_recruitment.recruitment_id for saved_recruitment in saved_recruitments)
     applications = Application.objects.filter(user=request.user)
@@ -68,6 +81,7 @@ def home(request):
         "applications": applications,
         "application_dict": application_dict,
         "current_time": current_time,
+        "state_filter": state_filter,
 }) 
 
 @login_required

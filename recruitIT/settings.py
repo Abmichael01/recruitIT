@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 import django_heroku
 import dj_database_url
+import cloudinary_storage
 
 load_dotenv()
 
@@ -48,6 +49,10 @@ INSTALLED_APPS = [
 
     #django google sso
     "django_google_sso",
+
+    # cloudinary
+    "cloudinary",
+    "cloudinary_storage",
     
 
     # installed apps
@@ -207,6 +212,14 @@ JAZZMIN_SETTINGS = {
     "copyright": "recruitit.site",
 }
 
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dp92rfbci",
+    "API_KEY": "871567181152798",
+    "API_SECRET": "5Sd2lFXvzmaJJLl0HaYFVq481e8"
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
 django_heroku.settings(locals())
