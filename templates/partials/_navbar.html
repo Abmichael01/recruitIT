@@ -2,10 +2,12 @@
 <link rel="stylesheet" href="{% static 'css/_navbar.css' %}">
 <header>
     <div class="logo-search-box-container">
-        <div class="logo-container">
-            <h2>Recruit</h2>
-            <img src="{% static 'images/logo.png' %}" alt="">
-        </div>
+        <a href="{% url 'home' %}">
+            <div class="logo-container">
+                <h2>Recruit</h2>
+                <img src="{% static 'images/logo.png' %}" alt="">
+            </div>
+        </a>
         <div class="search-box">
             <i class="fas fa-search"></i>
             <input type="text" class="search">
@@ -65,8 +67,7 @@
                         <img src="{{request.user.company.avatar.url}}" alt="">
                         {% endif %}
                         <div class="user-info">
-                            <p>Oyekola Michael</p>
-                            <p>This is the user bio</p>
+                            <p>{{request.user.student}}</p>
                         </div>
                     </div>
                     <div  class="view-user-profile">
