@@ -211,6 +211,20 @@
     color: var(--primary);
 } */
 
+.no-recruitment{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 30px;
+    border: var(--bw) solid var(--bc);
+    background: #fff;
+}
+
+.no-recruitment i, p{
+    font-size: 40px;
+    color: #666;
+}
+
 @media screen and (max-width: 620px) {
     .recruitment{
         background: #fff;
@@ -220,3 +234,4 @@
         position: relative;
     }
 }
+
