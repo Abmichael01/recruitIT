@@ -67,8 +67,14 @@
                         <img src="{{request.user.company.avatar.url}}" alt="">
                         {% endif %}
                         <div class="user-info">
+                            {% if request.user.is_student %}
                             <p>{{request.user.student}}</p>
                             <p>{{request.user.student.matric_no}}</p>
+                            {% endif %}
+                            {% if request.user.is_company %}
+                            <p>{{request.user.company}}</p>
+                            <p>{{request.user}}</p>
+                            {% endif %}
                         </div>
                     </div>
                     <div  class="view-user-profile">
