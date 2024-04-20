@@ -18,7 +18,9 @@
 
             <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="" placeholder="Password">
+                <input type="password" name="password" id="" placeholder="Password" class="password-input">
+                <i class="fa-solid fa-eye show-password"></i>
+                <i class="fa-solid fa-eye-slash hide-password" style="display: none;"></i>
             </div>
             <a href="{% url 'forgot-password' %}" class="forgot-password">Forgot password?</a>
             <input type="submit" value="Sign in" class="submit">
@@ -35,4 +37,21 @@
         </form>
     </div>
 </div>
+<script>
+    const showPassword = document.querySelector(".show-password")
+    const hidePassword = document.querySelector(".hide-password")
+    const passwordInput = document.querySelector(".password-input")
+
+    hidePassword.addEventListener("click", ()=>{
+        passwordInput.type = "password"
+        hidePassword.style.display = "none"
+        showPassword.style.display = "block"
+    })
+
+    showPassword.addEventListener("click", ()=>{
+        passwordInput.type = "text"
+        hidePassword.style.display = "block"
+        showPassword.style.display = "none"
+    })
+</script>
 {% endblock content %}
