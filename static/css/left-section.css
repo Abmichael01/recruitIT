@@ -34,6 +34,7 @@
 .left-section .left-user-info img{
     border-radius: 20px;
     width: 120px;
+    height: 60px;
     border: 2px solid var(--primary);
     object-fit: cover;
     object-position: center;
