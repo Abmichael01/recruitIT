@@ -282,7 +282,7 @@ nav{
     border-radius: 10px;
 }
 
-.settings-link{
+.dropdown-link{
     padding: 10px 20px;
     border-bottom: var(--bw) solid var(--bc);
     display: flex;
