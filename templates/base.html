@@ -10,13 +10,16 @@
     <link rel="icon" type="images/png" href="{% static 'images/logo.png' %}">
 </head>
 <body>
+
     
-    {% include "partials/_messages.html" %}
     {% include "partials/_navbar.html" %}
+    <div class="space"></div>
+    {% include "partials/_messages.html" %}
+
     {% include "recruitment/add-recruitment.html" %}
     {% include "recruitment/apply.html" %}
     {% include "recruitment/approve-application.html" %}
-    <div class="space"></div>
+    
     {% block content %}
       
     {% endblock content %}

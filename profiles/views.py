@@ -169,6 +169,8 @@ def edit_profile(request):
                 user_profile.avatar = user_profile.avatar
             
             user_profile.save()
+            messages.success(request, "Profile updated successfully")
+            return redirect("profile", pk=user.id)
 
         if user.is_company == True:
             company_name = request.POST["company_name"]

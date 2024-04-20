@@ -390,3 +390,33 @@ def get_application_info(request):
         return JsonResponse({
             "applicant_email": str(application.user.email),
         })
+
+@login_required
+@role_required
+@profile_completion_required
+def saved_recruitments(request):
+    recruitments = Recruitment.objects.filter(saved_recruitment__user=request.user)
+    
+    saved_recruitments = Saved_Recruitment.objects.filter(user=request.user)
+    saved_recruitment_ids = set(saved_recruitment.recruitment_id for saved_recruitment in saved_recruitments)
+    applications = Application.objects.filter(user=request.user)
+    application_r_ids = set(application.recruitment_id for application in applications)
+
+    
+    application_objects = Application.objects.filter(id__in=application_r_ids)
+    print(application_objects)
+
+    application_dict = {application.recruitment.id: application for application in application_objects}
+
+    current_time = timezone.now()
+
+
+    # messages.info(request, "INformation testing")
+    return render(request, "recruitment/saved-recruitments.html", {
+        "recruitments": recruitments,
+        "saved_recruitment_ids": saved_recruitment_ids,
+        "application_r_ids": application_r_ids,
+        "applications": applications,
+        "application_dict": application_dict,
+        "current_time": current_time,
+})

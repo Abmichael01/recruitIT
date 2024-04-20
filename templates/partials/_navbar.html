@@ -80,7 +80,7 @@
                     <div  class="view-user-profile">
                         <a href="{% url 'profile' request.user.id %}">View Profile</a>
                     </div>
-                    <a href="#" class="dropdown-link">
+                    <a href="{% url 'saved-recruitments' %}" class="dropdown-link">
                         <i class="fa-solid fa-briefcase"></i>
                         <span>Saved Recruitments</span>
                     </a>

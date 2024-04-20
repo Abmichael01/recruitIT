@@ -9,6 +9,7 @@ urlpatterns = [
     path("company/recruitments/<str:pk>/applications", recruitment_application, name="recruitment-applications"),
     path("student/applications", student_applications, name="student-applications"),
     path("recruitments/<str:pk>", recruitment, name="recruitment"),
+    path("saved-recruitments", saved_recruitments, name="saved-recruitments"),
 
 
 
