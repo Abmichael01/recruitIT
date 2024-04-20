@@ -73,7 +73,7 @@
                             {% endif %}
                             {% if request.user.is_company %}
                             <p>{{request.user.company}}</p>
-                            <p>{{request.user}}</p>
+                            <p>{{request.user.company.phone_number}}</p>
                             {% endif %}
                         </div>
                     </div>
