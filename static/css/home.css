@@ -93,7 +93,7 @@
     
 }
 
-.notifications-filter{
+.saved-recruitment{
     background: #fff;
     border: 0.001rem solid #dbdbdb;
     border-radius: 8px;
@@ -105,7 +105,7 @@
 
 }
 
-.notifications-filter p{
+.saved-recruitment p{
     font-size: 18px;
     font-weight: 500;
 }
