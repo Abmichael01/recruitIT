@@ -284,12 +284,15 @@ nav{
 
 .settings-link{
     padding: 10px 20px;
-    font-size: 15px;
     border-bottom: var(--bw) solid var(--bc);
-    color: #333;
     display: flex;
     gap: 5px;
     align-items: center;
+}
+
+.dropdown-link p, .dropdown-link i{
+    font-size: 15px;
+    color: #333;
 }
 
 .logout-link{
