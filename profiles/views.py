@@ -172,22 +172,22 @@ def edit_profile(request):
 
             if first_name == "":
                 messages.error(request, "Please enter your first name")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if last_name == "":
                 messages.error(request, "Please enter your last name")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if phone_number == "":
                 messages.error(request, "Please enter your phone number")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             elif len(phone_number) < 11:
                 messages.error(request, "Please enter a valid phone number")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if matric_no == "":
                 messages.error(request, "Please enter your matric number")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             elif len(matric_no) < 10:
                 messages.error(request, "Please enter a valid matric number")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
 
             user_profile =  Student.objects.get(user=user)
             user_profile.first_name = first_name
@@ -215,22 +215,22 @@ def edit_profile(request):
 
             if company_name == "":
                 messages.error(request, "Please enter your company name")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if bio == "":
                 messages.error(request, "Please enter your bio")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if phone_number == "":
                 messages.error(request, "Please enter your phone number")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if address == "":
                 messages.error(request, "Please enter your address")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if city == "":
                 messages.error(request, "Please enter your city")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
             if state == "State":
                 messages.error(request, "Please select your state")
-                return redirect("profile-setup")
+                return redirect("edit-profile")
 
             user_profile =  Company.objects.get(user=user)
             user_profile.company_name = company_name
