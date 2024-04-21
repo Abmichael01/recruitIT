@@ -58,6 +58,7 @@ def profile_setup(request):
             user_profile.first_name = first_name
             user_profile.last_name = last_name
             user_profile.matric_no = matric_no
+            user_profile.phone_number = phone_number
             
             if avatar is not None:
                 user_profile.avatar = avatar
@@ -192,6 +193,7 @@ def edit_profile(request):
             user_profile.first_name = first_name
             user_profile.last_name = last_name
             user_profile.matric_no = matric_no
+            user_profile.phone_number = phone_number
             
             if avatar is not None:
                 user_profile.avatar = avatar
