@@ -24,6 +24,7 @@
     padding: 15px 30px;
     height: 100%;
     overflow: hidden;
+    width: 100%;
 }
 
 .message p{
