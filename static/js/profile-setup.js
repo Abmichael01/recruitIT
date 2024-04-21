@@ -29,17 +29,8 @@ const matricInput = document.querySelector(".matric-input")
 phoneInput.addEventListener("input", ()=>{
     phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '')
 
-    if (phoneInput.value.length == 11){
-        phoneInput.value = phoneInput.value.subString(0, 10)
-    }
 })
 
-matricInput.addEventListener("input", ()=>{
-
-    if (matricInput.value.length == 10){
-        matricInput.value = matricInput.value.subString(0, 9)
-    }
-})
 
 
 
