@@ -3,6 +3,9 @@
     transition: .2s ease-out;
     height: 60px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* position: fixed;
     top: 0;
     right: 0;
