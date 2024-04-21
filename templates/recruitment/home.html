@@ -65,7 +65,7 @@
         
         <div class="new-recruitment">
             <div class="company-img">
-                <img src="{% static 'images/company-logo.jpg' %}" alt="">
+                <img src="{{request.user.company.avatar.url}}" alt="">
             </div>
             <div class="post-new-recruitment add-recruitment-butt">
                 <i class="fa-solid fa-plus"></i>
