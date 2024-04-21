@@ -220,15 +220,16 @@
     background: #fff;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
 }
 
 .no-recruitment i{
-    font-size: 50px;
+    font-size: 40px;
     color: #666;
 }
 
 .no-recruitment p{
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     color: #666;
 }
