@@ -6,6 +6,7 @@ class Student(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50,  null=True)
     matric_no = models.CharField(max_length=10, null=True)
+    phone_number = models.CharField(max_length=11, null=True)
     avatar = models.ImageField(null=True, default="images/avatar.png", upload_to="images/")
 
     def __str__(self):

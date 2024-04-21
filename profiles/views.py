@@ -33,12 +33,19 @@ def profile_setup(request):
             avatar = request.FILES.get("image")
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
+            phone_number = request.POST["phone_number"]
 
             if first_name == "":
                 messages.error(request, "Please enter your first name")
                 return redirect("profile-setup")
             if last_name == "":
                 messages.error(request, "Please enter your last name")
+                return redirect("profile-setup")
+            if phone_number == "":
+                messages.error(request, "Please enter your phone number")
+                return redirect("profile-setup")
+            elif len(phone_number) < 10:
+                messages.error(request, "Please enter a valid phone number")
                 return redirect("profile-setup")
             if matric_no == "":
                 messages.error(request, "Please enter your matric number")
@@ -160,12 +167,19 @@ def edit_profile(request):
             avatar = request.FILES.get("image")
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
+            phone_number = request.POST["phone_number"]
 
             if first_name == "":
                 messages.error(request, "Please enter your first name")
                 return redirect("profile-setup")
             if last_name == "":
                 messages.error(request, "Please enter your last name")
+                return redirect("profile-setup")
+            if phone_number == "":
+                messages.error(request, "Please enter your phone number")
+                return redirect("profile-setup")
+            elif len(phone_number) < 10:
+                messages.error(request, "Please enter a valid phone number")
                 return redirect("profile-setup")
             if matric_no == "":
                 messages.error(request, "Please enter your matric number")
