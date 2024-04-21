@@ -22,6 +22,12 @@
                  <i class="fa-solid fa-graduation-cap"></i>
                 <p class="profile-email">{{user.student.matric_no}}</p>
             </div>
+
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <p class="profile-email">{{user.student.phone_number}}</p>
+           </div>
+
             {% endif %}
 
             {% if user.is_company %}
@@ -32,6 +38,11 @@
                 <i class="fa-regular fa-envelope"></i>
                 <p class="profile-email">{{user}}</p>
             </div>
+
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <p class="profile-email">{{user.student.phone_number}}</p>
+           </div>
 
             <div>
                 <i class="fa-solid fa-location-dot"></i>
