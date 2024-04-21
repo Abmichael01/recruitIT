@@ -190,6 +190,7 @@ def apply(request):
             )
 
             new_notification.save()
+            messages.success(request, "Application was successful")
         else:
             # Check if the letter is different
             if application.letter != letter:
@@ -207,6 +208,7 @@ def apply(request):
                 )
 
                 new_notification.save()
+                messages.success(request, "Re-Application was successful")
             else:
                 print("re-applied with the same letter")
             
@@ -245,7 +247,7 @@ def approve_application(request):
                 fail_silently=False,
             )
             print("sent")
-            messages.success(request, "Application, applicant will recieve your email and contact you")
+            messages.success(request, "Application approved successfully")
             application.approved = True
             application.save()
 
