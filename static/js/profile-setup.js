@@ -23,6 +23,23 @@ pictureInput.addEventListener("input", ()=>{
     }
 })
 
+const phoneInput = document.querySelector(".phone-input")
+const matricInput = document.querySelector(".matric-input")
+
+phoneInput.addEventListener("input", ()=>{
+    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '')
+
+    if (phoneInput.value.length == 11){
+        phoneInput.value = phoneInput.value
+    }
+})
+
+matricInput.addEventListener("input", ()=>{
+
+    if (matricInput.value.length == 10){
+        matricInput.value = matricInput.value
+    }
+})
 
 
 
