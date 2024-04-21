@@ -44,13 +44,13 @@ def profile_setup(request):
             if phone_number == "":
                 messages.error(request, "Please enter your phone number")
                 return redirect("profile-setup")
-            elif len(phone_number) < 10:
+            elif len(phone_number) < 11:
                 messages.error(request, "Please enter a valid phone number")
                 return redirect("profile-setup")
             if matric_no == "":
                 messages.error(request, "Please enter your matric number")
                 return redirect("profile-setup")
-            elif len(matric_no) > 10:
+            elif len(matric_no) < 10:
                 messages.error(request, "Please enter a valid matric number")
                 return redirect("profile-setup")
 
@@ -178,13 +178,13 @@ def edit_profile(request):
             if phone_number == "":
                 messages.error(request, "Please enter your phone number")
                 return redirect("profile-setup")
-            elif len(phone_number) < 10:
+            elif len(phone_number) < 11:
                 messages.error(request, "Please enter a valid phone number")
                 return redirect("profile-setup")
             if matric_no == "":
                 messages.error(request, "Please enter your matric number")
                 return redirect("profile-setup")
-            elif len(matric_no) > 10:
+            elif len(matric_no) < 10:
                 messages.error(request, "Please enter a valid matric number")
                 return redirect("profile-setup")
 
