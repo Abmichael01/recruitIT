@@ -36,7 +36,7 @@
 .notifications{
     display: flex;
     flex-direction: column;
-    
+    padding: 10px;
     align-items: center;
     background: #fff;
     border: 0.001rem solid #dbdbdb;
