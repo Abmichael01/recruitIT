@@ -1,6 +1,5 @@
 const picture = document.querySelector(".picture")
 const pictureInput = document.querySelector("#picture-input")
-const phoneInput = document.querySelector(".phone-input")
 
 
 const skillInput = document.querySelector(".skill-input")
@@ -26,10 +25,7 @@ pictureInput.addEventListener("input", ()=>{
 
 
 
-phoneInput.addEventListener("input", ()=>{
-    inputval = phoneInput.value
-    phoneInput.value = inputval.replace(/[^0-9]/g, "")
-})
+
 
 
 skillInput.addEventListener("keydown", (e)=>{
