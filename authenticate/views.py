@@ -105,8 +105,7 @@ def register_user(request):
 
         if not User.objects.filter(email=email).exists():
             user = User.objects.create_user(email=email, password=password)
-            user.is_active = True
-            user_profile.save()
+            # user.is_active = True
 
             if role == "student":
                 user.is_student = True
@@ -176,7 +175,6 @@ def send_verification_code(request):
         return JsonResponse({
             "code_error": f"An error occured: {str(e)}"
         })
-        print("error dey ooo")
     else:
         user.verification_code = code
         user.save()
