@@ -125,3 +125,13 @@
 </div>
 {% endif %}
 {% endif %}
+
+{% if page == "saved-recruitments" %}
+{% if recruitments.count == 0 %}
+<div class="no-recruitment">
+  <i class="fa-solid fa-exclamation-triangle"></i>
+  <p>You have not saved any recruitment</p>
+</div>
+{% endif %}
+{% endif %}
+

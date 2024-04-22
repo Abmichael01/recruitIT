@@ -415,6 +415,7 @@ def saved_recruitments(request):
 
     # messages.info(request, "INformation testing")
     return render(request, "recruitment/saved-recruitments.html", {
+        "page": "saved-recruitments",
         "recruitments": recruitments,
         "saved_recruitment_ids": saved_recruitment_ids,
         "application_r_ids": application_r_ids,
