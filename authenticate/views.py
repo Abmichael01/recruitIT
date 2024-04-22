@@ -119,6 +119,7 @@ def register_user(request):
                 user_profile.save()
             
             messages.success(request, "Your account was successfuly created")
+            login(request, user)
 
             request.session["verification_email"] = email
             return redirect('profile-setup')
