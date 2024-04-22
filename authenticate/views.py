@@ -107,7 +107,7 @@ def register_user(request):
             user = User.objects.create_user(email=email, password=password)
             user.is_active = True
             user_profile.save()
-            
+
             if role == "student":
                 user.is_student = True
                 user.save()
@@ -189,6 +189,7 @@ def send_verification_code(request):
 
 
 def verify_email(request):
+    return redirect("home")
     print(request.user)
     email = request.session.get("verification_email", None)
         
