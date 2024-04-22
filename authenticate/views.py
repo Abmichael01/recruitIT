@@ -105,7 +105,7 @@ def register_user(request):
 
         if not User.objects.filter(email=email).exists():
             user = User.objects.create_user(email=email, password=password)
-            user.is_active = False
+            user.is_active = True
             
             if role == "student":
                 user.is_student = True
