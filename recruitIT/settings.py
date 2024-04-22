@@ -80,7 +80,7 @@ GOOGLE_SSO_LOGO_URL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAM
 
 GOOGLE_SSO_TEXT = "Continue with Google"
 
-GOOGLE_SSO_PRE_LOGIN_CALLBACK = "authenticate.hooks.pre_login_user"
+# GOOGLE_SSO_PRE_LOGIN_CALLBACK = "authenticate.hooks.pre_login_user"
 
 
 MIDDLEWARE = [
