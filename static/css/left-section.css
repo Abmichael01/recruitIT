@@ -32,7 +32,7 @@
 }
 
 .left-section .left-user-info img{
-    border-radius: 20px;
+    clip-path: circle();
     width: 120px;
     height: 120px;
     border: 2px solid var(--primary);
