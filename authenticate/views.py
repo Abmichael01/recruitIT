@@ -122,7 +122,7 @@ def register_user(request):
             messages.success(request, "Your account was successfuly created")
 
             request.session["verification_email"] = email
-            return redirect('verify-email')
+            return redirect('profile-setup')
         
     
     return render(request, "authenticate/register.html", {
@@ -189,7 +189,8 @@ def send_verification_code(request):
 
 
 def verify_email(request):
-    return redirect("home")
+    if request.user.is_active:
+        return redirect("home")
     print(request.user)
     email = request.session.get("verification_email", None)
         
