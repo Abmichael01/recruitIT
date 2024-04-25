@@ -152,6 +152,27 @@
     color: #0ec739;
 }
 
+.no-application{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.no-application i{
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--bc);
+}
+
+.no-application p{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--bc);
+}
+
 
 
 @media screen and (max-width: 1200px) {
