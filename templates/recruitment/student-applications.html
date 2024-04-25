@@ -48,15 +48,15 @@
                             </td>
                         </tr>
                         {% endfor %}
-                        {% if s_applications.count == 0 %}
-                        <tr><div class="no-application">
-                            <i class="fa-solid fa-exclamation-triangle"></i>
-                            <p>You have not applied for any recruitments yet</p>
-                        </div></tr>
-                        {% endif %}
                     </tbody>
                 </table>
             </div>
+            {% if s_applications.count == 0 %}
+            <div class="no-application">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <p>You have not applied for any recruitments yet</p>
+            </div>
+            {% endif %}
         </div>
     </div>
   </div>
