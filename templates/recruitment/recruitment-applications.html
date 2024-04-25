@@ -49,6 +49,12 @@
                     </tbody>
                 </table>
             </div>
+            {% if s_applications.count == 0 %}
+            <div class="no-application">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <p>No student has applied for this recruitment</p>
+            </div>
+            {% endif %}
         </div>
     </div>
   </div>

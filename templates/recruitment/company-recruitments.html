@@ -50,6 +50,12 @@
                     </tbody>
                 </table>
             </div>
+            {% if recruitments.count == 0 %}
+            <div class="no-recruitment">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <p>You have not posted any recruitment yet</p>
+            </div>
+            {% endif %}
         </div>
     </div>
   </div>
