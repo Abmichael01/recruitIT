@@ -39,7 +39,7 @@
                     <a href="{% url 'profile' recruitment.user.id %}">
                         <p>{{recruitment.user.company.company_name}}</p>
                     </a>
-                    <span>{{recruitment.user.company.bio}}</span>
+                    <span class="company-bio">{{recruitment.user.company.bio}}</span>
                     <div>
                         
                         <span>
@@ -78,7 +78,7 @@
             </div>
             <div class="seats-left {% if request.user.is_student == True %} seats-border {% endif %} ">
                 <p>Seats</p>
-                <p>12/{{recruitment.seats}}</p>
+                <p>{{recruitment.application_set.count}}/{{recruitment.seats}}</p>
             </div>
         </div>
         {% if request.user.is_student == True %}

@@ -87,6 +87,14 @@ recruitments.forEach(recruitment=>{
     })
 
 
+    // show less company bio 
+    const companyBio = recruitment.querySelector(".company-bio")
+
+    if (companyBio.textContent.length > 50){
+        companyBio.textContent = companyBio.textContent.substring(0, 50) + "..."
+    }
+
+
     // description show less and show more
     const recruitmentDescription = recruitment.querySelector(".description")
     
@@ -94,6 +102,9 @@ recruitments.forEach(recruitment=>{
     recruitmentDescription.textContent = recruitmentDescription.textContent.substring(0, 200) + "..."
 
     const seeMore = recruitment.querySelector(".see-more")
+    if (description.length < 200){
+        seeMore.style.display = "none"
+    }
 
     seeMore.addEventListener("click", ()=>{
         
@@ -463,7 +474,7 @@ cancelApplicationButts.forEach(cancelApplicationButt=>{
         confirmCancel = confirm("Are you sure you want to cancel this application?")
 
         if(confirmCancel){
-            application_id = cancelApplicationButt.dataset.id
+            const application_id = cancelApplicationButt.dataset.id
 
             formData = new FormData()
             formData.append("application_id", application_id)

@@ -60,14 +60,14 @@
 
 .profile-section .user-profile .profile-bio{
     /* font-weight: 500; */
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .profile-section .user-profile div{
     display: flex;
     gap: 10px;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .profile-section .user-profile div i{
@@ -76,7 +76,7 @@
 }
 
 .profile-section .user-profile .edit-profile{
-    font-size: 18px;
+    font-size: 16px;
     color: var(--primary);
     margin-top: 20px;
     border: 1px solid var(--primary);
