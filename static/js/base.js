@@ -117,6 +117,34 @@ recruitments.forEach(recruitment=>{
         }
     })
 
+
+    // delete recruitment
+    const deleteRecruitmentButt = recruitment.querySelector(".delete-recruitment")
+
+    if (deleteRecruitmentButt){
+        deleteRecruitmentButt.addEventListener("click", ()=>{
+            confirmDelete = confirm("Are you sure you want to delete this recruitment?")
+    
+            if(confirmDelete){
+                const recruitment_id = deleteRecruitmentButt.dataset.id
+    
+                formData = new FormData()
+                formData.append("recruitment_id", recruitment_id)
+    
+                fetch("/delete-recruitment", {
+                    body: formData,
+                    method: "POST",
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    if(data.deleted){
+                        location.reload()
+                    }
+                })
+            }  
+        })
+    }
+
 })
 
 
@@ -246,6 +274,11 @@ if (saveRecruitmentButts){
         })
     })
 }
+
+
+
+
+
 
 
 
@@ -455,9 +488,6 @@ approveButt.addEventListener("click", (event)=>{
         console.log(error)
     })
 })
-
-
-
 
 
 

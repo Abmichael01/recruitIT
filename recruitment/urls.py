@@ -20,7 +20,8 @@ urlpatterns = [
     path("cancel-application", csrf_exempt(cancel_application), name="cancel-application"),
     path("get-unseen-notifications", csrf_exempt(get_unseen_notifications), name="get-unseen-notifications"),
     path("get-application-info", csrf_exempt(get_application_info), name="get-application-info"),
-    path("approve-application", csrf_exempt(approve_application), name="approve-application")
+    path("approve-application", csrf_exempt(approve_application), name="approve-application"),
+    path("delete-recruitment", csrf_exempt(delete_recruitment), name="delete-recruitment"),
     
 ]
  

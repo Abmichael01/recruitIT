@@ -423,3 +423,12 @@ def saved_recruitments(request):
         "application_dict": application_dict,
         "current_time": current_time,
 })
+
+def delete_recruitment(request):
+    if request.method == "POST":
+        recruitment_id = request.POST.get("recruitment_id")
+        recruitment = Recruitment.objects.get(id=recruitment_id)
+        recruitment.delete()
+        return JsonResponse({
+            "deleted": True
+        })
