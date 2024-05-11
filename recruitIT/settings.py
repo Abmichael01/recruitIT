@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "authenticate",
     "recruitment",
     "profiles",
+    "ubit",
 
 ]
 

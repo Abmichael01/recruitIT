@@ -1,0 +1,27 @@
+{% extends "ubit/base.html" %}
+{% load static %}
+{% block title %}Dasboard{% endblock title %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  <div class="dashboard">
+    <div class="stats">
+      <div class="stat">
+        <h2>Students</h2>
+        <p>{{students.count}}</p>
+        <a href="">
+          <span>View All</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="stat">
+        <h2>Companies</h2>
+        <p>{{companies.count}}</p>
+        <a href="">
+          <span>View All</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
