@@ -6,17 +6,17 @@
         <i class="fa-solid fa-bars menu"></i>
     </div>
     <div class="nav">
-        <a href="dashboard" class="active">
+        <a href="{% url 'ubit:dashboard' %}" class="active">
             <i class="fa-solid fa-gauge"></i>
             <span>Dashboard</span>
         </a>
 
-        <a href="students">
+        <a href="{% url 'ubit:students' %}">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Students</span>
         </a>
 
-        <a href="companies">
+        <a href="{% url 'ubit:companies' %}">
             <i class="fa-solid fa-building-columns"></i>
             <span>Companies</span>
         </a>
@@ -24,9 +24,5 @@
 </div>
 
 <script>
-    const menu = document.querySelector('.menu');
-    const sidebar = document.querySelector('.sidebar');
-    menu.addEventListener('click', () => {
-        sidebar.classList.toggle('hide-nav');
-    });
+    
 </script>

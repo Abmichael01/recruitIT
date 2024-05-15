@@ -9,19 +9,39 @@
       <div class="stat">
         <h2>Students</h2>
         <p>{{students.count}}</p>
-        <a href="">
+        <a href="{% url 'ubit:students' %}">
           <span>View All</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
+
       <div class="stat">
         <h2>Companies</h2>
         <p>{{companies.count}}</p>
-        <a href="">
+        <a href="{% url 'ubit:companies' %}">
           <span>View All</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
+
+      <div class="stat">
+        <h2>Applications</h2>
+        <p>{{applications.count}}</p>
+        <a href="{% url 'ubit:applications' %}">
+          <span>View All</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="stat">
+        <h2>Recruitments</h2>
+        <p>{{recruitments.count}}</p>
+        <a href="{% url 'ubit:recruitments' %}">
+          <span>View All</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
     </div>
   </div>
 {% endblock content %}

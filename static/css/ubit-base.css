@@ -32,5 +32,24 @@ body{
 
 .main{
     width: 100%;
+}
+
+.main-nav{
+    display: flex;
+    padding: 15px 30px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--bw) inset var(--bc);
+    background: #fff;
+    width: 100%;
+}
+
+.main-nav h2{
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.sub-main{
+    width: 100%;
     padding: 20px;
 }

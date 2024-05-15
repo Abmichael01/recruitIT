@@ -1,5 +1,5 @@
 .sidebar{
-    width: 400px;
+    width: 80px;
     /* background: var(--primary); */
     height: 100vh;
     position: sticky;
@@ -8,7 +8,7 @@
     flex-direction: column;
     /* color: #fff; */
     align-items: flex-start;
-    padding: 10px 20px;
+    padding: 10px 10px;
     overflow: hidden;
     transition: .7s;
     border-right: var(--bw) solid var(--bc);
@@ -16,15 +16,21 @@
     color: var(--primary);
 }
 
-.hide-nav{
-    width: 99px;
+.sidebar:hover{
+    width: 400px;
 }
 
-
-.hide-nav .head h2{
-    display: none;
+.sidebar:hover .head h2{
+    display: inline-block;
     text-wrap: nowrap;
     overflow: hidden;
+}
+
+.sidebar:hover .head{
+    justify-content: flex-end;
+    text-wrap: nowrap;
+    overflow: hidden;
+    justify-content: center;
 }
 
 .sidebar .head{
@@ -35,18 +41,12 @@
     margin-top: 20px;
 }
 
-.hide-nav .head{
-    justify-content: flex-end;
-    text-wrap: nowrap;
-    overflow: hidden;
-    justify-content: center;
-}
-
 .sidebar .head h2{
     font-size: 22px;
     text-wrap: nowrap;
     overflow: hidden;
-    /* margin-top: 10px; */
+    display: none;
+    margin-right: 10px;
 }
 
 .sidebar .head .menu{

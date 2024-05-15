@@ -14,16 +14,16 @@
 
 .dashboard .stats .stat{
     padding: 20px;
-    background: #fff;
+    background: #fff; 
     border: var(--bw) solid var(--bc);
-    width: 400px;
+    width: 350px;
     border-radius: 8px;
     transition: .5s;
-    box-shadow: 0px 7px 20px #0000000b ;
+    box-shadow: 0px 7px 20px #0000000b;
 }
 
 .dashboard .stats .stat:hover{
-    box-shadow: 0px 7px 20px #00000023 ;
+    box-shadow: 0px 7px 20px #00000023;
 }
 
 .dashboard .stats .stat:nth-child(1){
@@ -31,9 +31,16 @@
 }
 
 
-
 .dashboard .stats .stat:nth-child(2){
     border-right: 5px solid #1262a4b9;
+}
+
+.dashboard .stats .stat:nth-child(3){
+    border-right: 5px solid #a41262b9;
+}
+
+.dashboard .stats .stat:nth-child(4){
+    border-right: 5px solid #a46212b9;
 }
 
 .dashboard .stats .stat h2{
@@ -80,4 +87,12 @@
 
 .dashboard .stats .stat:nth-child(2) a{
     background:  #1262a4b9;
+}
+
+.dashboard .stats .stat:nth-child(3) a{
+    background: #a41262b9;
+}
+
+.dashboard .stats .stat:nth-child(4) a{
+    background: #a46212b9;
 }

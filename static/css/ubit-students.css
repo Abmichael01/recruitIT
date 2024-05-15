@@ -35,9 +35,10 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
-    border: 1px inset var(--bc);
-    padding: 20px 10px;
+    border: 1px solid var(--bc);
+    padding: 10px 20px;
     background: #fff;
+    border-radius: 8px;
 }
 
 
@@ -46,16 +47,17 @@
 
 
 
-.students-container .students-nav .back-butt{
+.students-container .students-filters .back-butt{
     font-family: "Roboto",Arial,sans-serif;
     font-weight: 600;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 8px 15px;
     cursor: pointer;
     border: 1px solid var(--bc);
     color: #666;
+    width: fit-content;
     
 }
 

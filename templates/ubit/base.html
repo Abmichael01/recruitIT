@@ -13,9 +13,14 @@
     <div class="ubit-dasboard">
         {% include "ubit/sidebar.html" %}
         <div class="main">
-            {% block content %}
+            <div class="main-nav">
+                <h2>UBIT DASBOARD</h2>
+            </div>
+            <div class="sub-main">
+                {% block content %}
               
-            {% endblock content %}
+                {% endblock content %}
+            </div>
         </div>
     </div>
 </body>
