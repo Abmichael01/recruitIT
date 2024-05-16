@@ -38,11 +38,24 @@
                             </td>
                             <td>{{application.matric_no}}</td>
                             <td>{{application.email}}</td>
-                            <td><a href="{{application.letter.url}}" download>Download Letter</a></td>
                             <td>
-                                <a class="approve-application-butt" data-id="{{application.id}}">
+                                <a href="{{application.letter.url}}" download class="download-link" >
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Letter</span>
+                                </a>
+                            </td>
+                            <td>
+                                {% if application.approved %}
+                                <a class="download-link">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Approved</span>
+                                </a>
+                                {% else %}
+                                <a class="approve-application-butt download-link" data-id="{{application.id}}">
+                                    <i class="fa-solid fa-check"></i>
                                     <span>Approve</span>
                                 </a>
+                                {% endif %}
                             </td>
                         </tr>
                         {% endfor %}

@@ -1,5 +1,7 @@
+
+/* side-bar */
 .sidebar{
-    width: 80px;
+    width: 75px;
     /* background: var(--primary); */
     height: 100vh;
     position: sticky;
@@ -14,16 +16,18 @@
     border-right: var(--bw) solid var(--bc);
     background: #fff;
     color: var(--primary);
+    flex-shrink: 0;
 }
 
 .sidebar:hover{
-    width: 400px;
+    /* min-width: 300px; */
+    width: 300px;
 }
 
 .sidebar:hover .head h2{
     display: inline-block;
     text-wrap: nowrap;
-    overflow: hidden;
+    
 }
 
 .sidebar:hover .head{
@@ -32,6 +36,8 @@
     overflow: hidden;
     justify-content: center;
 }
+
+
 
 .sidebar .head{
     display: flex;
@@ -64,7 +70,7 @@
 .nav a{
     /* color: #fff; */
     display: flex;
-    gap: 15px;
+    gap: 20px;
     padding: 10px 15px;
     margin-bottom: 30px;
     align-items: center;
@@ -72,7 +78,7 @@
     border-radius: 8px;
     transition: .3s;
     background: none;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: var(--primary);
 }
 
@@ -98,6 +104,11 @@
 .nav a span{
     font-size: 20px;
     transition: .5s;
+    display: none;
+}
+
+.sidebar:hover .nav a span{
+    display: inline-block;
 }
 
 .nav .active{
@@ -112,5 +123,3 @@
     /* background: #fff; */
     background: var(--primary);
 }
-
-

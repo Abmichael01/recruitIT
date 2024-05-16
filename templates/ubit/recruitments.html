@@ -1,9 +1,66 @@
 {% extends "ubit/base.html" %}
 {% load static %}
-
 {% block title %}Recruitments{% endblock title %}
 
 {% block content %}
-  <link rel="stylesheet" href="{% static '' %}">
+  <link rel="stylesheet" href="{% static 'css/ubit-recruitments.css' %}">
+  <div class="recruitments-main">
+        <h2 class="header-text">Recruitments</h2>
 
+        <div class="recruitments-container">
+            <div class="recruitments-filters">
+                <a href="{% url 'ubit:dashboard' %}" class="back-butt">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <div>
+                    <input type="text" placeholder="Search" class="search-box">
+                </div>
+            </div>
+
+            <div class="recruitments">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Recruitment Title</th>
+                            <th>Posted By</th>
+                            <th>Applications</th>
+                            <th>Seats</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {% for recruitment in recruitments %}
+                        <tr class="rows">
+                            <td class="data">
+                                <img src="{{recruitment.image.url}}" alt="">
+                                <span><a  class="r-title links" href="{% url 'recruitment' recruitment.id %}" target="_blank">{{recruitment.title}}</a></span>
+                            </td>
+                            <td class="data"><a class="links" href="{% url 'profile' recruitment.user.id %}" target="_blank">{{recruitment.user.company.company_name}}</a></td>
+                            <td class="data">{{recruitment.application_set.count}}</td>
+                            <td class="data">{{recruitment.seats}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% if recruitments.count == 0 %}
+            <div class="no-application">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <p>No recruitment has been posted</p>
+            </div>
+            {% endif %}
+       
+      </div>
+  </div>
+  <script>
+    const recruitmentTitles = document.querySelectorAll(".r-title")
+
+    recruitmentTitles.forEach(recruitmentTitle=>{
+        if (recruitmentTitle.textContent.length > 30){
+            recruitmentTitle.textContent = recruitmentTitle.textContent.slice(0, 30) + "..."
+        }
+    })
+   
+  </script>
 {% endblock content %}

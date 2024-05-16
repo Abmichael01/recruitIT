@@ -110,7 +110,15 @@
     border: none;
 }
 
-.main-container .applications table td a{
+.applications-container .applications table td .links{
+    color: #666;
+}
+
+.applications-container .applications table td .links:hover{
+    text-decoration: underline;
+}
+
+.applications-container .applications table td .download-link{
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 5px;
@@ -126,11 +134,12 @@
 }
 
 .main-container .applications table td img{
-    width: 50px;
-    height: 30px;
-    border-radius: 2px;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
     object-fit: cover;
     object-position: center;
+    border: 1px solid #888;
 }
 
 .main-container .applications table tbody tr td:nth-child(1){

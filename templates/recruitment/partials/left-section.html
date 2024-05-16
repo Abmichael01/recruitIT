@@ -11,7 +11,7 @@
         {% if request.user.is_company %}
         <img src="{{request.user.company.avatar.url}}" alt="">
         <h3>{{request.user.company.company_name}}</h3>
-        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur possimus saep</h5>
+        <h5>{{request.user.company.bio}}</h5>
         <p>{{request.user}}</p>
         {% endif %}
     </div>

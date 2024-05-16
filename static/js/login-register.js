@@ -44,6 +44,8 @@ const form = document.querySelector("form")
 
 
 passwordInput.addEventListener("input", ()=>{
+    submitBtn.disabled = false
+    submitBtn.classList.remove("submit-disabled")
     passwordError.textContent = ""
     passwordError.classList.remove("error")
     passwordField.classList.remove("error") 
@@ -51,6 +53,8 @@ passwordInput.addEventListener("input", ()=>{
         passwordError.textContent = "Password cannot be less than 8 characters"
         passwordError.classList.add("error")
         passwordField.classList.add("error") 
+        submitBtn.disabled = true
+        submitBtn.classList.add("submit-disabled")
     }
 })
 

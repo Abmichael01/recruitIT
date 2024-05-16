@@ -1,9 +1,72 @@
 {% extends "ubit/base.html" %}
 {% load static %}
-
 {% block title %}Applications{% endblock title %}
 
 {% block content %}
-  <link rel="stylesheet" href="{% static '' %}">
+  <link rel="stylesheet" href="{% static 'css/ubit-applications.css' %}">
+  <div class="applications-main">
+        <h2 class="header-text">Applications</h2>
 
+        <div class="applications-container">
+            <div class="applications-filters">
+                <a href="{% url 'ubit:dashboard' %}" class="back-butt">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <div>
+                    <input type="text" placeholder="Search" class="search-box">
+                </div>
+            </div>
+
+            <div class="applications">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Applicant's Name</th>
+                            <th>Recruitment</th>
+                            <th>Eamil</th>
+                            <th>Letter</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {% for application in applications %}
+                        <tr class="rows"> 
+                            <td class="data">
+                                <img src="{{application.user.student.avatar.url}}" alt="">
+                                <span><a href="{% url 'profile' application.user.id %}" target="_blank" class="links">{{application.name}}</a></span>
+                            </td>
+                            <td class="data"><a  class="r-title links" href="{% url 'recruitment' application.recruitment.id %}" target="_blank">{{application.recruitment.title}}</a></td>
+                            <td class="data">{{application.user.email}}</td>
+                            <td>
+                                <a href="{{application.letter.url}}" class="download-link" download>
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Letter</span>
+                                </a>
+                            </td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% if s_applications.count == 0 %}
+            <div class="no-application">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <p>No application has applied for this recruitment</p>
+            </div>
+            {% endif %}
+       
+      </div>
+  </div>
+  <script>
+    const recruitmentTitles = document.querySelectorAll(".r-title")
+
+    recruitmentTitles.forEach(recruitmentTitle=>{
+        if (recruitmentTitle.textContent.length > 20){
+            recruitmentTitle.textContent = recruitmentTitle.textContent.slice(0, 20) + "..."
+        }
+    })
+   
+  </script>
 {% endblock content %}

@@ -3,8 +3,57 @@
 {% block title %}Companies{% endblock title %}
 
 {% block content %}
-  <link rel="stylesheet" href="css/ubit-companies.css">
-  <div class="dashboard">
+  <link rel="stylesheet" href="{% static 'css/ubit-companies.css' %}">
+  <div class="companies-main">
+        <h2 class="header-text">Companies</h2>
+
+        <div class="companies-container">
+            <div class="companies-filters">
+                <a href="{% url 'ubit:dashboard' %}" class="back-butt">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <div>
+                    <input type="text" placeholder="Search" class="search-box">
+                </div>
+            </div>
+
+            <div class="companies">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company's Name</th>
+                            <th>Eamil</th>
+                            <th>Phone No</th>
+                            <th>Location</th>
+                            <th>Recruitments</th>
+                        </tr>
+                    </thead>
     
+                    <tbody>
+                        {% for company in companies %}
+                        <tr class="rows">
+                            <td class="data">
+                                <img src="{{company.avatar.url}}" alt="">
+                                <span><a href="{% url 'profile' company.user.id %}" target="_blank" class="links">{{company.company_name}}</a></span>
+                            </td>
+                            <td class="data">{{company.user.email}}</td>
+                            <td class="data">{{company.phone_number}}</td>
+                            <td class="data">{{company.city}}, {{company.state}}</td>
+                            <td class="data">{{company.user.recruitment_set.count}}</td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% if s_applications.count == 0 %}
+            <div class="no-application">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <p>No company has applied for this recruitment</p>
+            </div>
+            {% endif %}
+       
+      </div>
   </div>
 {% endblock content %}

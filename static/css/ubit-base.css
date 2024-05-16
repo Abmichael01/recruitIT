@@ -30,8 +30,13 @@ body{
     
 }
 
+
 .main{
-    width: 100%;
+    max-width: calc(100% - 75px);
+}
+
+.sidebar:hover .main{
+    max-width: calc(100% - 300px);
 }
 
 .main-nav{
@@ -50,6 +55,8 @@ body{
 }
 
 .sub-main{
-    width: 100%;
+    /* width: 100%; */
     padding: 20px;
 }
+
+

@@ -114,13 +114,21 @@
     border: none;
 }
 
-.main-container .applications table td a{
+.applications-container .applications table td .links{
+    color: #666;
+}
+
+.applications-container .applications table td .links:hover{
+    text-decoration: underline;
+}
+
+.applications-container .applications table td .download-link{
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 5px;
     background: #fff;
-    border: 1px solid #d23f3f;
-    color: #d23f3f;
+    border: 1px solid var(--primary);
+    color: var(--primary);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -135,6 +143,7 @@
     border-radius: 2px;
     object-fit: cover;
     object-position: center;
+    border: 1px solid #888;
 }
 
 .main-container .applications table tbody tr td:nth-child(1){

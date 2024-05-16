@@ -1,6 +1,6 @@
 {% extends "ubit/base.html" %}
 {% load static %}
-{% block title %}Dasboard{% endblock title %}
+{% block title %}Students{% endblock title %}
 
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/ubit-students.css' %}">
@@ -12,10 +12,14 @@
                 <a href="{% url 'ubit:dashboard' %}" class="back-butt">
                   <i class="fa-solid fa-arrow-left"></i>
                 </a>
+
+                <div>
+                    <input type="text" placeholder="Search" class="search-box">
+                </div>
             </div>
 
             <div class="students">
-                <table>
+                <table id="table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -27,14 +31,14 @@
     
                     <tbody>
                         {% for student in students %}
-                        <tr>
-                            <td>
+                        <tr class="rows">
+                            <td class="data">
                                 <img src="{{student.avatar.url}}" alt="">
-                                <span>{{student.first_name }} {{student.last_name }}</span>
+                                <span><a href="{% url 'profile' student.user.id %}" target="_blank" class="links">{{student.first_name }} {{student.last_name }}</a></span>
                             </td>
-                            <td>{{student.matric_no}}</td>
-                            <td>{{student.user.email}}</td>
-                            <td>{{student.user.application_set.count}}</td>
+                            <td class="data">{{student.matric_no}}</td>
+                            <td class="data">{{student.user.email}}</td>
+                            <td class="data">{{student.user.application_set.count}}</td>
                             
                         </tr>
                         {% endfor %}
@@ -50,4 +54,5 @@
        
       </div>
   </div>
+ 
 {% endblock content %}
