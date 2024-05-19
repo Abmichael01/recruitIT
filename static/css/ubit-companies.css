@@ -107,20 +107,26 @@
     text-decoration: underline;
 }
 
-.companies-container .companies table td .download-link{
+.companies-container .companies table td .action-link{
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 5px;
     background: #fff;
     border: 1px solid var(--primary);
-    color: var(--primary);
+    /* color: var(--primary); */
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 5px;
     font-weight: 500;
     width: fit-content;
+}
 
+
+
+.companies-container .companies table td .delete-link{
+    color: #dd5830;
+    border-color: #dd5830;
 }
 
 .companies-container .companies table td img{

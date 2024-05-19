@@ -25,13 +25,12 @@
 }
 
 .sidebar:hover .head h2{
-    display: inline-block;
+    display: block;
     text-wrap: nowrap;
     
 }
 
 .sidebar:hover .head{
-    justify-content: flex-end;
     text-wrap: nowrap;
     overflow: hidden;
     justify-content: center;

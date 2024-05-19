@@ -190,6 +190,7 @@ def apply(request):
             )
 
             new_notification.save()
+            application.save()
             messages.success(request, "Application was successful")
         else:
             # Check if the letter is different

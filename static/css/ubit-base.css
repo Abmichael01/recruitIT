@@ -32,11 +32,11 @@ body{
 
 
 .main{
-    max-width: calc(100% - 75px);
+    width: calc(100% - 75px);
 }
 
 .sidebar:hover .main{
-    max-width: calc(100% - 300px);
+    width: calc(100% - 300px);
 }
 
 .main-nav{
@@ -47,6 +47,8 @@ body{
     border-bottom: var(--bw) inset var(--bc);
     background: #fff;
     width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .main-nav h2{
@@ -55,7 +57,7 @@ body{
 }
 
 .sub-main{
-    /* width: 100%; */
+    width: 100%;
     padding: 20px;
 }
 

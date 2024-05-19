@@ -26,6 +26,7 @@
                             <th>Posted By</th>
                             <th>Applications</th>
                             <th>Seats</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
     
@@ -39,6 +40,12 @@
                             <td class="data"><a class="links" href="{% url 'profile' recruitment.user.id %}" target="_blank">{{recruitment.user.company.company_name}}</a></td>
                             <td class="data">{{recruitment.application_set.count}}</td>
                             <td class="data">{{recruitment.seats}}</td>
+                            <td>
+                                <a class="delete-link action-link recruitment-delete" data-id="{{recruitment.id}}">
+                                    <i class="fa-solid fa-trash-can "></i>
+                                    <!-- <span>Delete</span> -->
+                                </a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

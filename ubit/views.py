@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from profiles.models import *
 from recruitment.models import *
+from custom_user.models import User
 from functools import wraps
 from django.contrib import messages
+from django.http import JsonResponse
 
 
 def login_required(function):
@@ -78,3 +80,25 @@ def recruitments(request):
         "page": "recruitments",
         "recruitments": recruitments,
     })
+
+def delete_student(request):
+    if request.method == "POST":
+        student_id = request.POST.get("student_id")
+        student = Student.objects.get(id=student_id)
+        user = User.objects.get(student=student)
+        user.delete()
+
+        return JsonResponse({
+            "deleted": True
+        })
+
+def delete_company(request):
+    if request.method == "POST":
+        company_id = request.POST.get("company_id")
+        company = Company.objects.get(id=company_id)
+        user = User.objects.get(company=company)
+        user.delete()
+
+        return JsonResponse({
+            "deleted": True
+        })

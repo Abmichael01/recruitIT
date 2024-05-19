@@ -107,7 +107,7 @@
     text-decoration: underline;
 }
 
-.recruitments-container .recruitments table td .download-link{
+.recruitments-container .recruitments table td .action-link{
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 5px;
@@ -120,7 +120,11 @@
     gap: 5px;
     font-weight: 500;
     width: fit-content;
+}
 
+.recruitments-container .recruitments table td .delete-link{
+    color: #dd5830;
+    border-color: #dd5830;
 }
 
 .recruitments-container .recruitments table td img{
