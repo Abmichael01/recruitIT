@@ -4,6 +4,7 @@ const pictureInput = document.querySelector("#picture-input")
 
 const skillInput = document.querySelector(".skill-input")
 const skillInputField = document.querySelector(".skill-input-field")
+const skillsCont = document.querySelector(".skills-cont")
 
 
 
@@ -23,13 +24,18 @@ pictureInput.addEventListener("input", ()=>{
     }
 })
 
-const phoneInput = document.querySelector(".phone-input")
+
+const phoneInputs = document.querySelectorAll(".phone-input")
+
+phoneInputs.forEach(phoneInput => {
+    phoneInput.addEventListener("input", ()=>{
+        phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '')
+    
+    })
+});
+
 const matricInput = document.querySelector(".matric-input")
 
-phoneInput.addEventListener("input", ()=>{
-    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '')
-
-})
 
 
 
@@ -40,10 +46,10 @@ skillInput.addEventListener("keydown", (e)=>{
     if (e.key == "Enter"){
         e.preventDefault()
 
-        skillCont = document.createElement("div")
+        const skillCont = document.createElement("div")
         skillCont.style.display = "flex"
         skillCont.classList.add("skill")
-        skillInputField.appendChild(skillCont)
+        skillsCont.appendChild(skillCont)
 
         newSkill = document.createElement("span")
         newSkill.textContent = skillInput.value

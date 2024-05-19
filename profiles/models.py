@@ -7,7 +7,9 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50,  null=True)
     matric_no = models.CharField(max_length=10, null=True)
     phone_number = models.CharField(max_length=11, null=True)
-    # level = models.CharField(max_length=10, null=True)
+    level = models.CharField(max_length=3, null=True)
+    account_no = models.CharField(max_length=10, null=True)
+    bank_name = models.CharField(max_length=50, null=True)
     avatar = models.ImageField(null=True, default="images/avatar.png", upload_to="images/")
 
     def __str__(self):

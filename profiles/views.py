@@ -27,6 +27,7 @@ def login_required(function):
 @login_required
 def profile_setup(request):
     user = request.user
+    possible_levels = ["100", "200", "300", "400", "500",]
     if request.method == "POST":
         if user.is_student == True:
             first_name = request.POST["first_name"]
@@ -34,6 +35,10 @@ def profile_setup(request):
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
             phone_number = request.POST["phone_number"]
+            level = request.POST["level"]
+            account_no = request.POST["account_no"]
+            bank_name = request.POST["bank_name"]
+
 
             if first_name == "":
                 messages.error(request, "Please enter your first name")
@@ -53,12 +58,33 @@ def profile_setup(request):
             elif len(matric_no) < 10:
                 messages.error(request, "Please enter a valid matric number")
                 return redirect("profile-setup")
+            if level == "":
+                messages.error(request, "Please enter your level")
+                return redirect("profile-setup")
+            elif level not in possible_levels:
+                messages.error(request, "Please enter a valid level")
+                return redirect("profile-setup")
+            if account_no == "":
+                messages.error(request, "Please enter your account number")
+                return redirect("profile-setup")
+            if len(account_no) < 10:
+                messages.error(request, "Please enter a valid account number")
+                return redirect("profile-setup")
+            if bank_name == "":
+                messages.error(request, "Please enter your bank name")
+                return redirect("profile-setup")
+            
+            
+            
 
             user_profile =  Student.objects.get(user=user)
             user_profile.first_name = first_name
             user_profile.last_name = last_name
             user_profile.matric_no = matric_no
             user_profile.phone_number = phone_number
+            user_profile.level = level
+            user_profile.account_no = account_no
+            user_profile.bank_name = bank_name
             
             if avatar is not None:
                 user_profile.avatar = avatar
@@ -155,7 +181,7 @@ def profile(request, pk):
 @login_required
 def edit_profile(request):
     user = request.user
-
+    possible_levels = ["100", "200", "300", "400", "500",]
     profile = ""
     if user.is_student == True:
         profile = Student.objects.get(user=user)
@@ -169,6 +195,9 @@ def edit_profile(request):
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
             phone_number = request.POST["phone_number"]
+            level = request.POST["level"]
+            account_no = request.POST["account_no"]
+            bank_name = request.POST["bank_name"]
 
             if first_name == "":
                 messages.error(request, "Please enter your first name")
@@ -188,12 +217,31 @@ def edit_profile(request):
             elif len(matric_no) < 10:
                 messages.error(request, "Please enter a valid matric number")
                 return redirect("edit-profile")
+            if level == "":
+                messages.error(request, "Please enter your level")
+                return redirect("edit-profile")
+            elif level not in possible_levels:
+                messages.error(request, "Please enter a valid level")
+                return redirect("edit-profile")
+            if account_no == "":
+                messages.error(request, "Please enter your account number")
+                return redirect("edit-profile")
+            if len(account_no) < 10:
+                messages.error(request, "Please enter a valid account number")
+                return redirect("edit-profile")
+            if bank_name == "":
+                messages.error(request, "Please enter your bank name")
+                return redirect("edit-profile")
+            
 
             user_profile =  Student.objects.get(user=user)
             user_profile.first_name = first_name
             user_profile.last_name = last_name
             user_profile.matric_no = matric_no
             user_profile.phone_number = phone_number
+            user_profile.level = level
+            user_profile.account_no = account_no
+            user_profile.bank_name = bank_name
             
             if avatar is not None:
                 user_profile.avatar = avatar

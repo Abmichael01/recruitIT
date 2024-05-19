@@ -30,29 +30,49 @@
             <div class="forms">
                {% if request.user.is_student == True %}
                <div class="profile-info">
-                    <div class="input-container">
-                        <input type="text" name="first_name" placeholder="First Name" value="{{profile.first_name}}">
+                    <div class="section">
+                        <p class="section-title">Personal Details</p>
+                        <div class="input-container">
+                            <input type="text" name="first_name" placeholder="First Name" value="{{profile.first_name}}">
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="text" name="last_name" placeholder="Last Name" value="{{profile.last_name}}">
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="text" name="email" placeholder="" value="{{request.user}}" readonly>
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="text" name="level" placeholder="Level" class="phone-input" maxlength="3" value="{{profile.level}}">
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="text" name="matric_no" placeholder="Matric Number" class="matric-input" maxlength="10" value="{{profile.matric_no}}">
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="text" name="phone_number" placeholder="Phone Number" class="phone-input" maxlength="11" value="{{profile.phone_number}}">
+                        </div>
                     </div>
 
-                    <div class="input-container">
-                        <input type="text" name="last_name" placeholder="Last Name" value="{{profile.last_name}}">
+                    <div class="section">
+                        <p class="section-title">Bank Details</p>
+                        <div class="input-container">
+                            <input type="text" name="account_no" placeholder="Account Number" class="phone-input" maxlength="10" value="{{profile.account_no}}">
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="bank_name" placeholder="Bank Name" class="bank-input" value="{{profile.bank_name}}">
+                        </div>
                     </div>
 
-                    <div class="input-container">
-                        <input type="text" name="email" placeholder="" value="{{request.user}}" readonly>
-                    </div>
-
-                    <div class="input-container">
-                        <input type="text" name="matric_no" placeholder="Matric Number" class="matric-input" maxlength="10" value="{{profile.matric_no}}">
-                    </div>
-
-                    <div class="input-container">
-                        <input type="text" name="phone_number" placeholder="Phone Number" class="phone-input" maxlength="11" value="{{profile.phone_number}}">
-                    </div>
-
-                    <div class="input-container" style="display: none;">
-                        <p>Add your skills</p>
+                    <div class="section">
+                        <p class="section-title">Add your skills or interests</p>
                         <div class="skill-input-field">
+                            <div class="skills-cont">
+
+                            </div>
                             <input type="text" placeholder="Type skill and hit enter to add" class="skill-input">
                         </div> 
                     </div>
