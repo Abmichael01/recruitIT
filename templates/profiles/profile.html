@@ -12,11 +12,16 @@
             <div class="gradient"></div>
             {% if user.is_student %}
             <img src="{{user.student.avatar.url}}" alt="">
-            <h3>{{user.student.first_name}} {{user.student.last_name}}</h3>
+            <h3 class="profile-name">{{user.student.first_name}} {{user.student.last_name}}</h3>
             <div>
-                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-solid fa-envelope"></i>
                 <p class="profile-email">{{user}}</p>
             </div>
+
+            <div>
+                <i class="fa-solid fa-layer-group"></i>
+               <p class="profile-email">{{user.student.level}} Level</p>
+           </div>
 
             <div>
                  <i class="fa-solid fa-graduation-cap"></i>
@@ -27,6 +32,23 @@
                 <i class="fa-solid fa-phone"></i>
                 <p class="profile-email">{{user.student.phone_number}}</p>
            </div>
+
+
+            <div>
+                <div>
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                    <p class="profile-email">{{user.student.account_no}}</p>
+                </div>
+    
+                <div>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <p class="profile-email">{{user.student.bank_name}}</p>
+                </div>
+            </div>
+
+
+
+           
 
             {% endif %}
 
