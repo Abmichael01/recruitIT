@@ -122,7 +122,7 @@
     text-decoration: underline;
 }
 
-.applications-container .applications table td .download-link{
+.applications-container .applications table td .action-link{
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 5px;
