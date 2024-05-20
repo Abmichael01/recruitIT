@@ -96,3 +96,31 @@
 .dashboard .stats .stat:nth-child(4) a{
     background: #a46212b9;
 }
+
+@media screen and (max-width: 1100px) {
+    .dashboard .stats .stat{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 955px) {
+    .dashboard .stats .stat{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .dashboard .stats .stat{
+        width: 450px;
+    }
+
+    .dashboard .stats{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dashboard .stats .stat{
+        width: 100%;
+    }
+}

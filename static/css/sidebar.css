@@ -6,6 +6,8 @@
     height: 100vh;
     position: sticky;
     top: 0;
+    /* left: 0;
+    bottom: 0; */
     display: flex;
     flex-direction: column;
     /* color: #fff; */
@@ -21,7 +23,8 @@
 
 .sidebar:hover{
     /* min-width: 300px; */
-    width: 300px;
+    width: 270px;
+    
 }
 
 .sidebar:hover .head h2{
@@ -33,14 +36,14 @@
 .sidebar:hover .head{
     text-wrap: nowrap;
     overflow: hidden;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 
 
 .sidebar .head{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin-top: 20px;
@@ -51,12 +54,12 @@
     text-wrap: nowrap;
     overflow: hidden;
     display: none;
-    margin-right: 10px;
 }
 
 .sidebar .head .menu{
     font-size: 30px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .nav{
@@ -121,4 +124,14 @@
 .nav .active:hover{
     /* background: #fff; */
     background: var(--primary);
+}
+
+
+@media screen and (max-width: 1220px) {
+    .sidebar{
+        position: fixed;
+        left: -300px;
+        top: 0;
+        
+    }
 }

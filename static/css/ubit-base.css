@@ -12,6 +12,7 @@
 
 body{
     background: var(--light-gray);
+    /* height: 100vh; */
 }
 
 :root{
@@ -27,17 +28,16 @@ body{
 
 .ubit-dasboard{
     display: flex;
+    /* height: 100%; */
+}
+
+
+.main-all{
+    width: 100%;
     
 }
 
 
-.main{
-    width: calc(100% - 75px);
-}
-
-.sidebar:hover .main{
-    width: calc(100% - 300px);
-}
 
 .main-nav{
     display: flex;
@@ -49,6 +49,8 @@ body{
     width: 100%;
     position: sticky;
     top: 0;
+    right: 0;
+    left: 0;
 }
 
 .main-nav h2{

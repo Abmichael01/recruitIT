@@ -39,6 +39,7 @@
     padding: 10px 20px;
     background: #fff;
     border-radius: 8px;
+    gap: 20px;
 }
 
 
@@ -210,5 +211,19 @@
         align-items: flex-start;
         gap: 10px;
     }
+
+}
+
+@media screen and (max-width: 560px) {
+    .students-container .students-filters{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .students-container .students-filters .search-box{
+        width: 100%;
+    }
+
+
 
 }

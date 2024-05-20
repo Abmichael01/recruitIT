@@ -39,6 +39,7 @@
     padding: 10px 20px;
     background: #fff;
     border-radius: 8px;
+    gap: 20px;
 }
 
 
@@ -199,4 +200,15 @@
         gap: 10px;
     }
 
+}
+
+
+@media screen and (max-width: 560px) {
+    .applications-container .applications-filters{
+        flex-direction: column;
+    }
+
+    .applications-container .applications-filters .search-box{
+        width: 100%;
+    }
 }

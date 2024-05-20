@@ -3,20 +3,21 @@
 <div class="sidebar hide-nav">
     <div class="head">
         <h2>UBIT DASHBOARD</h2>
-        <i class="fa-solid fa-bars menu"></i>
+        <!-- <i class="fa-solid fa-bars menu"></i> -->
+        <img src="{% static 'images/logo.png' %}" class="menu" alt="logo">
     </div>
     <div class="nav">
-        <a href="{% url 'ubit:dashboard' %}" class="active">
+        <a href="{% url 'ubit:dashboard' %}" class="{% if page == 'dashboard' %} active {% endif %}">
             <i class="fa-solid fa-gauge"></i>
             <span>Dashboard</span>
         </a>
 
-        <a href="{% url 'ubit:students' %}">
+        <a href="{% url 'ubit:students' %}" class="{% if page == 'students' %} active {% endif %}">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Students</span>
         </a>
 
-        <a href="{% url 'ubit:companies' %}">
+        <a href="{% url 'ubit:companies' %}" class="{% if page == 'companies' %} active {% endif %}">
             <i class="fa-solid fa-building-columns"></i>
             <span>Companies</span>
         </a>
