@@ -5,13 +5,14 @@
     <div class="left-user-info">
         {% if request.user.is_student %}
         <img src="{{request.user.student.avatar.url}}" alt="">
-        <p>{{request.user.student}} {{request.user.student.last_name}}</p>
+        <h3>{{request.user.student}}</h3>
+        <p>{{request.user}}</p>
         {% endif %}
 
         {% if request.user.is_company %}
         <img src="{{request.user.company.avatar.url}}" alt="">
         <h3>{{request.user.company.company_name}}</h3>
-        <h5>{{request.user.company.bio}}</h5>
+        <p>{{request.user.company.bio}}</p>
         <p>{{request.user}}</p>
         {% endif %}
     </div>

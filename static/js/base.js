@@ -90,7 +90,7 @@ recruitments.forEach(recruitment=>{
     // show less company bio 
     const companyBio = recruitment.querySelector(".company-bio")
 
-    if (companyBio.textContent.length > 50){
+    if (companyBio.textContent.length >= 50){
         companyBio.textContent = companyBio.textContent.substring(0, 50) + "..."
     }
 
@@ -98,24 +98,31 @@ recruitments.forEach(recruitment=>{
     // description show less and show more
     const recruitmentDescription = recruitment.querySelector(".description")
     
-    var description = recruitmentDescription.textContent
-    recruitmentDescription.textContent = recruitmentDescription.textContent.substring(0, 200) + "..."
+    var description = recruitmentDescription.textContent.trim()
+
+    if (description.length > 200){
+        recruitmentDescription.textContent = recruitmentDescription.textContent.substring(0, 200) + "..."
+    }
+    
 
     const seeMore = recruitment.querySelector(".see-more")
-    if (description.length < 200){
+    if (description.length <= 200){
         seeMore.style.display = "none"
+    }else{
+        seeMore.addEventListener("click", ()=>{
+        
+            if(seeMore.textContent == "See more..."){
+                recruitmentDescription.textContent = description
+                seeMore.textContent = "See less"
+            }else{
+                recruitmentDescription.textContent = description.substring(0, 200) + "..."
+                seeMore.textContent = "See more..."
+                // recruitment.scrollIntoView()
+            }
+        })
     }
 
-    seeMore.addEventListener("click", ()=>{
-        
-        if(seeMore.textContent == "See more..."){
-            recruitmentDescription.textContent = description
-            seeMore.textContent = "See less"
-        }else{
-            recruitmentDescription.textContent = description.substring(0, 200) + "..."
-            seeMore.textContent = "See more..."
-        }
-    })
+    
 
 
     // delete recruitment

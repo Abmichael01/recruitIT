@@ -90,6 +90,12 @@
                         <i class="fa-solid fa-pencil-alt"></i>
                         <span>Edit Profile</span>
                     </a>
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'ubit:dashboard' %}" class="dropdown-link">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span>UBIT Dashboard</span>
+                    </a>
+                    {% endif %}
                     <!-- <a href="#" class="dropdown-link">
                         <i class="fa-solid fa-cog"></i>
                         <span>Settings and Privacy</span>

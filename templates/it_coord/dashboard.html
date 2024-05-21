@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard | IT Coordinator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="images/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/coord-base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/it-coord-dashboard.css' %}">
+</head>
+<body>
+    <div class="coor-dasboard">
+        <div class="main-all">
+            <div class="main-nav"> 
+                <h2>IT COORDINATOR DASHBOARD</h2>
+            </div>
+            <div class="sub-main">
+                <div class="students-main">
+                    <h2 class="header-text">Acceptance Letters</h2>
+            
+                    <div class="students-container">
+                        <div class="students-filters">
+                            
+                            <input type="text" placeholder="Search" class="search-box">
+                            
+                            <a href="{% url 'submit-acceptance-letter' %}" target="_blank" class="go-to">Go to form page</a>
+
+                            
+                        </div>
+            
+                        <div class="students">
+                            <table id="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Matric No</th>
+                                        <th>Level</th>
+                                        <th>Year of entry</th>
+                                        <th>Phone Number</th>
+                                        <th>Acceptance Letter</th>
+                                        <th>Company's Address</th>
+                                        <th>Company's Email</th>
+                                        <th>Account Number</th>
+                                        <th>Bank Name</th>
+                                    </tr>
+                                </thead>
+                
+                                <tbody>
+                                    {% for letter in letters %}
+                                    <tr class="rows">
+                                        <td class="data">{{letter.full_name}}</td>
+                                        <td class="data">{{letter.matric_no}}</td>
+                                        <td class="data">{{letter.level}}</td>
+                                        <td class="data">{{letter.entry_year}}</td>
+                                        <td class="data">{{letter.phone_number}}</td>
+                                        <td>
+                                            <a href="{{letter.letter.url}}" class="action-link" target="_blank" download="{{letter.full_name}} acceptance letter">
+                                                 <i class="fa-solid fa-download"></i>
+                                                 <span>Letter</span>
+                                            </a>
+                                        </td>
+                                        <td class="data">{{letter.company_address}}</td>
+                                        <td class="data">{{letter.company_email}}</td>
+                                        <td class="data">{{letter.account_no}}</td>
+                                        <td class="data">{{letter.bank_name}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% if s_applications.count == 0 %}
+                        <div class="no-application">
+                            <i class="fa-solid fa-exclamation-triangle"></i>
+                            <p>No student has applied for this recruitment</p>
+                        </div>
+                        {% endif %}
+                   
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/it-coord-base.js' %}"></script>
+</body>
+</html>

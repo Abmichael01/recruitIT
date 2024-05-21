@@ -25,6 +25,7 @@ urlpatterns = [
     path("profiles/", include("profiles.urls")),
     path("authenticate/", include("authenticate.urls")),
     path("ubit/", include("ubit.urls")),
+    path("it-coord/", include("it_coord.urls")),
 
     # google sso path
     path( "google_sso/", include("django_google_sso.urls", namespace="django_google_sso")),  

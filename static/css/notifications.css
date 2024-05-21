@@ -36,7 +36,7 @@
 .notifications{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    /* padding: 10px; */
     align-items: center;
     background: #fff;
     border: 0.001rem solid #dbdbdb;
@@ -51,7 +51,17 @@
     width: 100%;
     justify-content: space-between;
     padding: 10px 20px;
+
 }
+
+.notification:nth-child(1){
+    border-radius: 8px 8px 0px 0px;
+}
+
+.notification:last-child{
+    border-radius: 0px 0px 8px 8px;
+}
+
 
 .notification:hover{
     background: var(--light-gray);
@@ -92,6 +102,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 20px;
 }
 
 .no-notifications i{
