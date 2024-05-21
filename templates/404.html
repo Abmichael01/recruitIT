@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Page Not found</title>
+    <style>
+
+        *{
+            text-align: center;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            height: 100vh;
+        }
+
+       .conatiner{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #fff;
+            gap: 20px;
+       }
+
+       h1{
+            font-size: 50px;
+            color: #555;
+       }
+
+       p{
+            font-size: 20px;
+            color: #555;
+       }
+
+       span{
+            color: var(--primary);
+       }
+
+       a{
+            font-size: 18px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+       }
+
+       span:nth-child(2){
+            color: #fff;
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <h1><span>404</span> Page Not Found</h1>
+        <p>The page you are looking for does not exist</p>
+        <a href="{% url 'home' %}">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Go to Home Page</span>
+        </a>
+    </div>
+</body>
+</html>

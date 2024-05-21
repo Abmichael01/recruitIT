@@ -1,0 +1,229 @@
+.students-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.students-container{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.students-main .header-text{
+    font-family: "Quicksand", Arial,sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+
+.students-container .students-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.students-container .students-filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid var(--bc);
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 8px;
+    gap: 20px;
+}
+
+
+
+
+
+
+
+.students-container .students-filters .back-butt{
+    font-family: "Roboto",Arial,sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border: 1px solid var(--bc);
+    color: #666;
+    width: fit-content;
+    
+}
+
+.students-container .students-filters .search-box{
+    padding: 8px 20px;
+    font-size: 16px;
+    color: #666;
+    border: 1px solid #666;
+    /* outline: none; */
+    outline-color: var(--primary);
+    border-radius: 5px;
+    width: 400px;
+}
+
+.students-container .students{
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.students-container .students table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--bc);
+    background: #fff;
+    color: #666;
+}
+
+.students-container .students table th, td{
+    font-family: "Roboto",Arial,sans-serif;
+    padding: 20px 20px;
+    text-align: left;
+    font-size: 16px;
+    text-wrap: nowrap;
+}
+
+.students-container .students table tr{
+    border-bottom: 1px solid var(--bc);
+}
+
+.students-container .students table th{
+    font-family: "Roboto",Arial,sans-serif;
+    font-weight: 450;
+    font-size: 18px;
+    border: none;
+}
+
+.students-container .students table td .links{
+    color: #666;
+}
+
+.students-container .students table td .links:hover{
+    text-decoration: underline;
+}
+
+.students-container .students table td .action-link{
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    width: fit-content;
+
+}
+
+.students-container .students table td .action-link:nth-child(1){
+    color: #dd5830;
+    border-color: #dd5830;
+}
+
+.delete-link{
+    color: #dd5830;
+    background: #dd5830;
+}
+
+
+.students-container .students table td img{
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.students-container .students table tbody tr td:nth-child(1){
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    max-width: 100%;
+}
+
+.students-container .students table tbody tr td:nth-child(1) span{
+    line-height: 1.3;
+}
+
+.no-application{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 20px 10px;
+    border: var(--bw) solid var(--bc)
+}
+
+.no-application i{
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--bc);
+}
+
+.no-application p{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--bc);
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main{
+        padding: 30px 20px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .main{
+        padding: 30px 10px;
+    }
+
+    .students-container .header-text{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .students-container .students-nav{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+
+@media screen and (max-width: 560px) {
+    .students-container .students-filters{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .students-container .students-filters .search-box{
+        width: 100%;
+    }
+
+
+
+}

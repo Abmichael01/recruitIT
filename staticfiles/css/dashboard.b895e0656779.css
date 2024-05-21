@@ -1,0 +1,126 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard .stats{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.dashboard .stats .stat{
+    padding: 20px;
+    background: #fff; 
+    border: var(--bw) solid var(--bc);
+    width: 350px;
+    border-radius: 8px;
+    transition: .5s;
+    box-shadow: 0px 7px 20px #0000000b;
+}
+
+.dashboard .stats .stat:hover{
+    box-shadow: 0px 7px 20px #00000023;
+}
+
+.dashboard .stats .stat:nth-child(1){
+    border-right: 5px solid #34a412b9;
+}
+
+
+.dashboard .stats .stat:nth-child(2){
+    border-right: 5px solid #1262a4b9;
+}
+
+.dashboard .stats .stat:nth-child(3){
+    border-right: 5px solid #a41262b9;
+}
+
+.dashboard .stats .stat:nth-child(4){
+    border-right: 5px solid #a46212b9;
+}
+
+.dashboard .stats .stat h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: #777;
+}
+
+.dashboard .stats .stat p{
+    font-size: 50px;
+    font-weight: 400;
+    color: #555;
+}
+
+.dashboard .stats .stat a{
+    font-size: 16px;
+    /* background: var(--primary); */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 20px;
+    align-items: center;
+    color: #fff;
+    width: fit-content;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: .5s;
+    transition-delay: .1s;
+    overflow: hidden;
+    box-shadow: 0px 7px 20px #0000005c ;
+}
+
+.dashboard .stats .stat a:hover{
+    transform: translateX(20px);
+}
+
+.dashboard .stats .stat a:hover .stat{
+    transform: translateY(-10px);
+}
+
+.dashboard .stats .stat:nth-child(1) a{
+    background: #34a412b9;
+}
+
+.dashboard .stats .stat:nth-child(2) a{
+    background:  #1262a4b9;
+}
+
+.dashboard .stats .stat:nth-child(3) a{
+    background: #a41262b9;
+}
+
+.dashboard .stats .stat:nth-child(4) a{
+    background: #a46212b9;
+}
+
+@media screen and (max-width: 1100px) {
+    .dashboard .stats .stat{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 955px) {
+    .dashboard .stats .stat{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .dashboard .stats .stat{
+        width: 450px;
+    }
+
+    .dashboard .stats{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dashboard .stats .stat{
+        width: 100%;
+    }
+}

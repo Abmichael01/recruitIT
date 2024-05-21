@@ -1,0 +1,249 @@
+.container{
+    display: flex;
+    justify-content: center;
+    background: #f2f2f2;
+    min-height: 100vh;
+}
+
+.form-container{
+    margin: 40px 0;
+    background: #fff;
+    width: 950px;
+    border-radius: 5px;
+    border: 0.00001rem solid #dbdbdb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-container h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+form{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.picture-input{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 35%;
+}
+
+
+.change-picture-button{
+    font-size: 16px;
+    background: #333;
+    padding: 8px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.change-picture-button:hover{
+    background: #444;
+}
+
+.picture{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px dashed var(--primary);
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.profile-info{
+    width: 100%;
+}
+
+.section{
+    margin-bottom: 30px;
+}
+
+.section-title{
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-container input{
+    padding: 10px 20px;
+    font-size: 17px;
+    border-radius: 5px;
+    background: var(--light-gray);
+    border: 1px solid #dbdbdb;
+    outline-color: var(--primary);
+    width: 500px;
+}
+
+.input-container select{
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    border: 2px solid #dbdbdb;
+    outline-color: var(--primary);
+    width: 500px;
+}
+
+textarea{
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    border: 2px solid #dbdbdb;
+    outline-color: var(--primary);
+    width: 500px;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.input-container p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.skill-input-field{
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    background: var(--light-gray);
+    border: 1px solid #dbdbdb;
+    outline-color: var(--primary);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-cont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.skill-input-field input{
+    font-size: 16px;
+}
+
+.skill{
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #fff;
+    background: #333;
+    border-radius: 5px;
+}
+
+.skill span{
+    margin-right: 10px;
+}
+
+.remove-skill{
+    margin-left: 5px;
+    padding: 5px;
+    clip-path: circle();
+}
+
+.remove-skill:hover{
+    background: #ff3d16;
+}
+
+.skill-input-field input{
+    width: 250px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+
+
+.continue{
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 5px;
+    align-self: flex-end;
+    width: fit-content;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 977px) {
+    .form-container{
+        width: 100%;
+    }
+
+    .container{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    form{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .picture-input{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+   
+    .input-container input{
+        width: 100%;
+    }
+
+    .input-container select{
+        width: 100%;
+    }
+
+    .skill-input-field {
+        width: 100%;
+    }
+
+    textarea{
+        width: 100%;
+    }
+
+    .forms{
+        width: 100%;
+    }
+
+}
+
+
+
+

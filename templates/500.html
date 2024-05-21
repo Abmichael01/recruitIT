@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>Page Not found</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            height: 100vh;
+        }
+
+       .conatiner{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #fff;
+            gap: 20px;
+       }
+
+       h1{
+            font-size: 50px;
+            color: #555;
+       }
+
+       p{
+            font-size: 20px;
+            color: #555;
+       }
+
+       span{
+            color: var(--primary);
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <h1><span>505</span> Server Error</h1>
+        <p>This Error is fron our end. Please be patient while we try to fix the error. Thank you</p>
+    </div>
+</body>
+</html>
