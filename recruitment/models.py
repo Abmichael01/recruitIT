@@ -61,6 +61,7 @@ class AcceptanceForm(models.Model):
     phone_number = models.CharField(max_length=11, null=True)
     level = models.CharField(max_length=3, null=True)
     entry_year = models.CharField(max_length=4, null=True)
+    letter = models.FileField(upload_to="documents/", null=True)
     # bank info
     account_no = models.CharField(max_length=10, null=True)
     bank_name = models.CharField(max_length=50, null=True)

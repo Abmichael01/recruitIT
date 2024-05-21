@@ -13,17 +13,19 @@
     <div class="main-container">
         <div class="gradient"></div>
         <div class="form-container">
-            <form action="" method="POST">
+            <p class="header-text">Submit Acceptance Form</p>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% include "partials/_messages.html" %}
                 {% csrf_token %}
                 <div class="form-sub">
                     <p>Personal Details</p>
-                    <input type="text" name="name" placeholder="Full Name">
+                    <input type="text" name="full_name" placeholder="Full Name">
                     <input type="text" name="level" placeholder="Level" maxlength="3" class="phone-input">
                     <input type="text" name="matric_no" placeholder="Matric No" maxlength="10">
-                    <input type="text" name="year_of_entry" placeholder="Year Of Entry" maxlength="4" class="phone-input">
+                    <input type="text" name="entry_year" placeholder="Year Of Entry" maxlength="4" class="phone-input">
                     <input type="text" name="phone_no" placeholder="Phone Number" class="phone-input" maxlength="11">
                     <div class="upload-cont">
-                        <input type="file" id="file-input" style="display: none;" accept=".pdf">
+                        <input type="file" name="letter" id="file-input" style="display: none;" accept=".pdf">
                         <p>Upload Acceptance Letter</p>
                         <label for="file-input">
                             <i class="fa-solid fa-upload"></i>

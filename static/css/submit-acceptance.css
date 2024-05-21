@@ -10,9 +10,10 @@
     
 }
 
-body{
+html, body{
     background: var(--light-gray);
     /* height: 100vh; */
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -42,7 +43,7 @@ body{
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .form-container{
@@ -50,6 +51,14 @@ body{
     background: #fff;
     width: 600px;
     padding: 50px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.form-container .header-text{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
 .form-container form{
@@ -90,6 +99,7 @@ body{
 
 .form-container form .upload-cont p{
     font-size: 16px;
+    text-align: center;
 }
 
 .form-container form .upload-cont label{
@@ -113,6 +123,22 @@ body{
     border: 0;
     color: #fff;
     cursor: pointer;
+}
+
+@media screen and (max-width: 670px) {
+    .form-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form-container{
+        padding: 50px 15px;
+    }
+
+    .main-container{
+        padding: 10px;
+    }
 }
 
 

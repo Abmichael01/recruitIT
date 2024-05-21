@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 # from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 import json
-from . models import Recruitment, Application, Saved_Recruitment, Notification
+from . models import Recruitment, Application, Saved_Recruitment, Notification, AcceptanceForm
 from django.contrib import messages
 from django.utils import timezone
 from functools import wraps
@@ -437,11 +437,11 @@ def delete_recruitment(request):
 def submit_acceptance_letter(request):
     possible_levels = ["100", "200", "300", "400", "500",]
     if request.method == "POST":
-        full_name = request.POST["full_name"]
+        full_name = request.POST.get("full_name")
         level =  request.POST["level"]
         matric_no = request.POST["matric_no"]
-        phone_no = request.POST["phone_matric"]
-        letter = request.POST.get("letter")
+        phone_no = request.POST["phone_no"]
+        letter = request.FILES.get("letter")
         company_address = request.POST["company_address"]
         company_email = request.POST["company_email"]
         account_no = request.POST["account_no"]
@@ -450,14 +450,49 @@ def submit_acceptance_letter(request):
         inputs = [full_name, level, matric_no, phone_no, company_address, company_email, account_no, bank_name]
 
         for input in inputs:
-            if len(input) < 1:
+            if input == "":
                 messages.error(request, "All fields are required")
+                return redirect("submit-acceptance-letter")
         
         if level not in possible_levels:
             messages.error(request, "Enter a valid level")
+            return redirect("submit-acceptance-letter")
         
         if len(matric_no) < 10:
             messages.error(request, "Matric number is invalid ")
+            return redirect("submit-acceptance-letter")
+
+        if letter is None:
+            messages.error(request, "Please upload your acceptance letter")
+            return redirect("submit-acceptance-letter")
+
+        if len(phone_no) < 11:
+            messages.error(request, "Phone number is invalid")
+            return redirect("submit-acceptance-letter")
+        
+        if len(account_no) < 10:
+            messages.error(request, "Account number is invalid")
+            return redirect("submit-acceptance-letter")
+        
+        if AcceptanceForm.objects.filter(matric_no = matric_no).first():
+            messages.error(request, "You have already submitted your acceptance letter")
+            return redirect("submit-acceptance-letter")
+        else:
+            new_form = AcceptanceForm.objects.create(
+                full_name = full_name,
+                level = level,
+                matric_no = matric_no,
+                phone_number = phone_no,
+                letter = letter,
+                company_address = company_address,
+                company_email = company_email,
+                account_no = account_no,
+                bank_name = bank_name,
+            )
+
+            new_form.save()
+            messages.success(request, "Acceptance letter submitted successfully")
+            return redirect("submit-acceptance-letter")
         
 
         
