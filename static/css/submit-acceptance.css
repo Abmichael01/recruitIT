@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&family=Poppins&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+body{
+    background: var(--light-gray);
+    /* height: 100vh; */
+}
+
+:root{
+    --primary: #A020F0;
+    --primary-hover: #821ac3;
+    --primary-light: #f7ebff;
+    --light-gray: #f2f2f2;
+    --bw: 0.001rem;
+    --bc: #dbdbdb;
+    --error: #ff3d16;
+    
+}
+
+
+.main-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    padding: 30px;
+
+}
+
+.gradient{
+    background-image: linear-gradient(to right top, #a020f0, #aa45eb, #b35fe5, #b976e0, #bf8cda);
+    height: 300px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.form-container{
+    box-shadow: 0px 0px 10px #0000004c;
+    background: #fff;
+    width: 600px;
+    padding: 50px 40px;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-container form .form-sub{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container form .form-sub p{
+    font-size: 18px;
+}
+
+.form-container form input{
+    padding: 8px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--bc);
+    outline-color: var(--primary-hover);
+    outline-width: 1px;
+
+}
+
+.form-container form .upload-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid var(--bc);
+    border-radius: 5px;
+}
+
+.form-container form .upload-cont p{
+    font-size: 16px;
+}
+
+.form-container form .upload-cont label{
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--primary);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.form-container form .submit{
+    font-size: 18px;
+    background: var(--primary);
+    border-radius: 5px;
+    padding: 10px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+

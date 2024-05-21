@@ -433,3 +433,36 @@ def delete_recruitment(request):
         return JsonResponse({
             "deleted": True
         })
+
+def submit_acceptance_letter(request):
+    possible_levels = ["100", "200", "300", "400", "500",]
+    if request.method == "POST":
+        full_name = request.POST["full_name"]
+        level =  request.POST["level"]
+        matric_no = request.POST["matric_no"]
+        phone_no = request.POST["phone_matric"]
+        letter = request.POST.get("letter")
+        company_address = request.POST["company_address"]
+        company_email = request.POST["company_email"]
+        account_no = request.POST["account_no"]
+        bank_name = request.POST["bank_name"]
+
+        inputs = [full_name, level, matric_no, phone_no, company_address, company_email, account_no, bank_name]
+
+        for input in inputs:
+            if len(input) < 1:
+                messages.error(request, "All fields are required")
+        
+        if level not in possible_levels:
+            messages.error(request, "Enter a valid level")
+        
+        if len(matric_no) < 10:
+            messages.error(request, "Matric number is invalid ")
+        
+
+        
+
+        
+
+
+    return render(request, "recruitment/submit_acceptance.html")

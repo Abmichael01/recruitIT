@@ -11,6 +11,8 @@ urlpatterns = [
     path("recruitments/<str:pk>", recruitment, name="recruitment"),
     path("saved-recruitments", saved_recruitments, name="saved-recruitments"),
 
+    path("submit-acceptance-letter", submit_acceptance_letter, name="submit-acceptance-letter"),
+
 
 
 

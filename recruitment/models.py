@@ -55,4 +55,21 @@ class Notification(models.Model):
     def __str__(self):
         return str(self.title) + " - " + str(self.user)
 
+class AcceptanceForm(models.Model):
+    full_name = models.CharField(max_length=100,  null=True)
+    matric_no = models.CharField(max_length=10, null=True)
+    phone_number = models.CharField(max_length=11, null=True)
+    level = models.CharField(max_length=3, null=True)
+    entry_year = models.CharField(max_length=4, null=True)
+    # bank info
+    account_no = models.CharField(max_length=10, null=True)
+    bank_name = models.CharField(max_length=50, null=True)
+    # company
+    company_address = models.CharField(max_length=300, null=True)
+    company_email = models.CharField(max_length=100, null=True)
+    
+
+    def __str__(self):
+        return str(self.first_name) + " " + str(self.last_name)
+
     

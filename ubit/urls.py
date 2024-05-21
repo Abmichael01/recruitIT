@@ -10,6 +10,7 @@ urlpatterns = [
     path("companies", companies, name="companies"),
     path("recruitments", recruitments, name="recruitments"),
     path("applications", applications, name="applications"),
+    
 
     path("delete-student", csrf_exempt(delete_student), name="delete-student"),
     path("delete-company", csrf_exempt(delete_company), name="delete-company"),

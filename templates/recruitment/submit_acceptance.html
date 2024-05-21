@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Acceptance to Coordinate</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/submit-acceptance.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="gradient"></div>
+        <div class="form-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-sub">
+                    <p>Personal Details</p>
+                    <input type="text" name="name" placeholder="Full Name">
+                    <input type="text" name="level" placeholder="Level" maxlength="3" class="phone-input">
+                    <input type="text" name="matric_no" placeholder="Matric No" maxlength="10">
+                    <input type="text" name="year_of_entry" placeholder="Year Of Entry" maxlength="4" class="phone-input">
+                    <input type="text" name="phone_no" placeholder="Phone Number" class="phone-input" maxlength="11">
+                    <div class="upload-cont">
+                        <input type="file" id="file-input" style="display: none;" accept=".pdf">
+                        <p>Upload Acceptance Letter</p>
+                        <label for="file-input">
+                            <i class="fa-solid fa-upload"></i>
+                            <span>Upload</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-sub">
+                    <p>Company Details</p>
+                    <input type="text" name="company_address", placeholder="Physical Address of Company">
+                    <input type="text" name="company_email", placeholder="Company's Email">
+                </div>
+
+                <div class="form-sub">
+                    <p>Bank Details</p>
+                    <input type="text" name="account_no", placeholder="Account Number" class="phone-input" maxlength="10">
+                    <input type="text" name="bank_name", placeholder="Bank Name">
+                </div>
+                <button type="submit" class="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/submit-acceptance.js' %}"></script>
+</body>
+</html>
