@@ -441,13 +441,14 @@ def submit_acceptance_letter(request):
         level =  request.POST["level"]
         matric_no = request.POST["matric_no"]
         phone_no = request.POST["phone_no"]
+        entry_year = request.POST["entry_year"]
         letter = request.FILES.get("letter")
         company_address = request.POST["company_address"]
         company_email = request.POST["company_email"]
         account_no = request.POST["account_no"]
         bank_name = request.POST["bank_name"]
 
-        inputs = [full_name, level, matric_no, phone_no, company_address, company_email, account_no, bank_name]
+        inputs = [full_name, level, matric_no, phone_no, company_address, company_email, account_no, bank_name, entry_year]
 
         for input in inputs:
             if input == "":
@@ -483,6 +484,7 @@ def submit_acceptance_letter(request):
                 level = level,
                 matric_no = matric_no,
                 phone_number = phone_no,
+                entry_year = entry_year,
                 letter = letter,
                 company_address = company_address,
                 company_email = company_email,
