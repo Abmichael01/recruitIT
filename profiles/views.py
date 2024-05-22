@@ -34,6 +34,8 @@ def profile_setup(request):
             avatar = request.FILES.get("image")
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
+            department = request.POST["department"]
+            school_name = request.POST["school_name"]
             phone_number = request.POST["phone_number"]
             level = request.POST["level"]
             account_no = request.POST["account_no"]
@@ -74,6 +76,13 @@ def profile_setup(request):
                 messages.error(request, "Please enter your bank name")
                 return redirect("profile-setup")
             
+            if department == "":
+                messages.error(request, "Please enter your department")
+                return redirect("edit-profile")
+            if school_name == "":
+                messages.error(request, "Please enter your school name")
+                return redirect("edit-profile")
+            
             
             
 
@@ -85,6 +94,7 @@ def profile_setup(request):
             user_profile.level = level
             user_profile.account_no = account_no
             user_profile.bank_name = bank_name
+
             
             if avatar is not None:
                 user_profile.avatar = avatar
@@ -131,6 +141,8 @@ def profile_setup(request):
             user_profile.address = address
             user_profile.city = city
             user_profile.state = state
+            user_profile.department = department
+            user_profile.school_name = school_name
 
             if avatar is not None:
                 user_profile.avatar = avatar
@@ -194,6 +206,8 @@ def edit_profile(request):
             avatar = request.FILES.get("image")
             last_name = request.POST["last_name"]
             matric_no = request.POST["matric_no"]
+            department = request.POST["department"]
+            school_name = request.POST["school_name"]
             phone_number = request.POST["phone_number"]
             level = request.POST["level"]
             account_no = request.POST["account_no"]
@@ -232,6 +246,12 @@ def edit_profile(request):
             if bank_name == "":
                 messages.error(request, "Please enter your bank name")
                 return redirect("edit-profile")
+            if department == "":
+                messages.error(request, "Please enter your department")
+                return redirect("edit-profile")
+            if school_name == "":
+                messages.error(request, "Please enter your school name")
+                return redirect("edit-profile")
             
 
             user_profile =  Student.objects.get(user=user)
@@ -242,6 +262,8 @@ def edit_profile(request):
             user_profile.level = level
             user_profile.account_no = account_no
             user_profile.bank_name = bank_name
+            user_profile.department = department
+            user_profile.school_name = school_name
             
             if avatar is not None:
                 user_profile.avatar = avatar

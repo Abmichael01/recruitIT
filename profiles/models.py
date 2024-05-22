@@ -6,6 +6,8 @@ class Student(models.Model):
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50,  null=True)
     matric_no = models.CharField(max_length=10, null=True)
+    department = models.CharField(max_length=100, null=True)
+    school_name = models.CharField(max_length=100, null=True)
     phone_number = models.CharField(max_length=11, null=True)
     level = models.CharField(max_length=3, null=True)
     account_no = models.CharField(max_length=10, null=True)
