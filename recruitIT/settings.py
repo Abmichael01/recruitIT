@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fk_bp*7x@d%97mgz+46%c#4@_gq0osh9-z*=j@j%3qg8(358er'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["www.recruitit.online", "recruitit.online", "recruitit-47654d4acc27.herokuapp.com", "localhost", "*"]
 

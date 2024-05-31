@@ -141,8 +141,6 @@ def profile_setup(request):
             user_profile.address = address
             user_profile.city = city
             user_profile.state = state
-            user_profile.department = department
-            user_profile.school_name = school_name
 
             if avatar is not None:
                 user_profile.avatar = avatar
