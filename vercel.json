@@ -23,13 +23,5 @@
       "src": "/(.*)",
       "dest": "recruitIT/wsgi.py"
     }
-  ],
-  "build": {
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "recruitIT.settings"
-    },
-    "commands": {
-      "build": "./build_files.sh"
-    }
-  }
+  ]
 }
