@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'custom_user.apps.CustomUserConfig',
 
     #django google sso
-    "django_google_sso",
+    # "django_google_sso",
 
     # cloudinary
     "cloudinary",
