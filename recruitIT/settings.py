@@ -1,8 +1,6 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-import django_heroku
-import dj_database_url
 import cloudinary_storage
 
 load_dotenv()
@@ -218,6 +216,4 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
-
-django_heroku.settings(locals())
 
