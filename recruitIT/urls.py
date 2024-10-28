@@ -28,7 +28,7 @@ urlpatterns = [
     path("it-coord/", include("it_coord.urls")),
 
     # google sso path
-    path( "google_sso/", include("django_google_sso.urls", namespace="django_google_sso")),  
+    # path( "google_sso/", include("django_google_sso.urls", namespace="django_google_sso")),  
 ]
 
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
